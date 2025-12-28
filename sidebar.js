@@ -22,8 +22,19 @@ function initSidebar(relatedSites = []) {
         return;
     }
 
+    // 현재 보고 있는 도구는 추천 목록에서 제외
+    const currentHostname = window.location.hostname;
+    const filteredTools = recommendedTools.filter(tool => {
+        try {
+            const toolHostname = new URL(tool.url).hostname;
+            return toolHostname !== currentHostname;
+        } catch (e) {
+            return true; // URL 파싱 실패 시 그냥 포함
+        }
+    });
+
     // 랜덤 섞기 & 10개만 추출
-    const shuffledTools = [...recommendedTools]
+    const shuffledTools = filteredTools
         .sort(() => Math.random() - 0.5)
         .slice(0, 10);
 
