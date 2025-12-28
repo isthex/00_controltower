@@ -36,7 +36,7 @@ function initSidebar(relatedSites = []) {
                 <ul class="sidebar-list">
                     ${relatedSites.map(site => `
                         <li>
-                            <a href="${site.url}" target="_blank" rel="noopener noreferrer">
+                            <a href="${site.url}">
                                 <span class="link-icon">🔗</span>
                                 <span class="link-text">${site.name}</span>
                             </a>
@@ -54,7 +54,7 @@ function initSidebar(relatedSites = []) {
             <ul class="sidebar-list">
                 ${shuffledTools.map(tool => `
                     <li>
-                        <a href="${tool.url}" target="_blank" rel="noopener noreferrer">
+                        <a href="${tool.url}">
                             <span class="link-icon">👉</span>
                             <div class="link-content">
                                 <span class="link-title">${tool.name}</span>
