@@ -5,6 +5,7 @@
 const recommendedTools = [
     { name: '퇴직연금 DC/DB 유불리 계산기', url: 'https://dcdb.ryunadb.kr', desc: '내 퇴직금, 어떤 게 유리할까?' },
     { name: '축의금 가이드 계산기', url: 'https://weddingpay.8949ok.kr', desc: '경조사비 고민 해결' },
+    { name: '온라인 글자 수 세기', url: 'https://character-counter.o2u.kr/', desc: '자기소개서 공백 포함/제외' },
     // 추후 프로젝트 추가 시 여기에만 추가하면 됩니다.
 ];
 
