@@ -9,6 +9,7 @@ const recommendedTools = [
     { name: '웹용 스톱워치/타이머', url: 'https://timer.8949ok.kr/', desc: '업무용 타이머' },
     { name: '축의금 가이드 계산기', url: 'https://weddingpay.8949ok.kr', desc: '경조사비 고민 해결' },
     { name: '해외주식 양도소득세 계산기', url: 'https://ustax.ryunadb.kr/', desc: '환율 변동 반영 세금 계산' },
+    { name: '연령 별 국민연금 인상액 계산기', url: 'https://npension.ssp2021.kr/', desc: '2025 개혁안 반영 시뮬레이터' },
     { name: '퇴직연금 DC/DB 유불리 계산기', url: 'https://dcdb.ryunadb.kr', desc: '내 퇴직금, 어떤 게 유리할까?' },
     // 추후 프로젝트 추가 시 여기에만 추가하면 됩니다.
 ];
