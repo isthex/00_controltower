@@ -11,6 +11,8 @@ const recommendedTools = [
     { name: '해외주식 양도소득세 계산기', url: 'https://ustax.ryunadb.kr/', desc: '환율 변동 반영 세금 계산' },
     { name: '연령 별 국민연금 인상액 계산기', url: 'https://npension.ssp2021.kr/', desc: '2025 개혁안 반영 시뮬레이터' },
     { name: '퇴직연금 DC/DB 유불리 계산기', url: 'https://dcdb.ryunadb.kr', desc: '내 퇴직금, 어떤 게 유리할까?' },
+    { name: '복리계산기 (스노우볼)', url: 'https://snowball.8949ok.kr/', desc: '주식/코인 투자 복리 시뮬레이터' },
+    { name: '비트코인 선물 진입수량 계산기', url: 'https://btccalculator.seosann.kr/', desc: '리스크 관리 필수 도구' },
     // 추후 프로젝트 추가 시 여기에만 추가하면 됩니다.
 ];
 
