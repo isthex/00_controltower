@@ -99,7 +99,7 @@ function initSidebar(config = {}) {
                 <ul class="sidebar-list">
                     ${config.relatedSites.map(site => `
                         <li>
-                            <a href="${site.url}" target="_blank">
+                            <a href="${site.url}">
                                 <span class="link-icon">🔗</span>
                                 <span class="link-text">${site.name}</span>
                             </a>
@@ -123,7 +123,7 @@ function initSidebar(config = {}) {
                     <ul class="sidebar-list">
                         ${relatedToolsList.map(tool => `
                             <li>
-                                <a href="${tool.url}" target="_blank">
+                                <a href="${tool.url}">
                                     <span class="link-icon">🔧</span>
                                     <div class="link-content">
                                         <span class="link-title">${tool.name}</span>
@@ -145,8 +145,8 @@ function initSidebar(config = {}) {
             <ul class="sidebar-list">
                 ${shuffledTools.map(tool => `
                     <li>
-                        <a href="${tool.url}" target="_blank">
-                            <span class="link-icon">👉</span>
+                        <a href="${tool.url}">
+                            <span class="link-icon">🎯</span>
                             <div class="link-content">
                                 <span class="link-title">${tool.name}</span>
                                 ${tool.desc ? `<span class="link-desc">${tool.desc}</span>` : ''}
