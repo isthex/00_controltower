@@ -57,6 +57,11 @@ const allProjects = {
         name: '국민연금 예상수령액 계산기',
         url: 'https://mypension.8949ok.kr/',
         desc: '내 연금, 얼마나 받을 수 있을까?'
+    },
+    '12_size-converter': {
+        name: '해외 국가별 사이즈 변환기',
+        url: 'https://sizeconvert.o2u.kr/',
+        desc: '신발/의류 사이즈 즉시 변환'
     }
 };
 
