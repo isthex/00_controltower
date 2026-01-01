@@ -62,6 +62,11 @@ const allProjects = {
         name: '해외 국가별 사이즈 변환기',
         url: 'https://sizeconvert.o2u.kr/',
         desc: '신발/의류 사이즈 즉시 변환'
+    },
+    '13_pension-breakeven-calculator': {
+        name: '국민연금 본전 계산기',
+        url: 'https://npensionprofit.seosann.kr/',
+        desc: '몇 살까지 살아야 본전일까?'
     }
 };
 
@@ -71,6 +76,11 @@ const allProjects = {
 //   relatedTools: ['project-id']     // 프로젝트별 관련 도구 (ID 배열)
 // }
 function initSidebar(config = {}) {
+    // 하위 호환성: config가 배열이면 relatedSites로 처리
+    if (Array.isArray(config)) {
+        config = { relatedSites: config };
+    }
+
     const sidebarContainer = document.getElementById('sidebar');
     if (!sidebarContainer) {
         console.warn('Sidebar container not found');
