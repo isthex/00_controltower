@@ -6,77 +6,107 @@ const allProjects = {
     '01_character-counter': {
         name: '온라인 글자 수 세기',
         url: 'https://character-counter.o2u.kr/',
-        desc: '자기소개서 공백 포함/제외'
+        desc: '자기소개서 공백 포함/제외',
+        categories: ['문서작성', '업무도구'],
+        keywords: ['글자수세기', '자기소개서', '공백포함', '공백제외', '문자수카운터', '텍스트분석', '워드카운트']
     },
     '02_lotto-simulator': {
         name: '로또 번호 시뮬레이터',
         url: 'https://lotto.8949ok.kr/',
-        desc: '역대 당첨 번호 기반'
+        desc: '역대 당첨 번호 기반',
+        categories: ['게임', '시뮬레이터'],
+        keywords: ['로또', '로또번호', '당첨번호', '로또시뮬레이터', '번호생성', '로또분석', '확률', '복권']
     },
     '03_d-day-countdown': {
         name: 'D-Day 카운트다운',
         url: 'https://d-day.o2u.kr/',
-        desc: '중요한 날짜 관리'
+        desc: '중요한 날짜 관리',
+        categories: ['일정관리', '생산성도구'],
+        keywords: ['디데이', 'D-Day', '카운트다운', '날짜계산', '기념일', '일정관리', '타이머', '남은날짜']
     },
     '04_timer-stopwatch': {
         name: '웹용 스톱워치/타이머',
         url: 'https://timer.8949ok.kr/',
-        desc: '업무용 타이머'
+        desc: '업무용 타이머',
+        categories: ['생산성도구', '시간관리'],
+        keywords: ['스톱워치', '타이머', '시간측정', '업무타이머', '알람', '카운트다운', '시간관리', '포모도로']
     },
     '05_wedding-gift-calculator': {
         name: '축의금 가이드 계산기',
         url: 'https://weddingpay.8949ok.kr',
-        desc: '경조사비 고민 해결'
+        desc: '경조사비 고민 해결',
+        categories: ['생활정보', '계산기'],
+        keywords: ['축의금', '결혼축의금', '경조사비', '축의금계산', '결혼식', '부조금', '축하금', '경조사']
     },
     '06_retirement-dc-db': {
         name: '퇴직연금 DC/DB 유불리 계산기',
         url: 'https://dcdb.ryunadb.kr',
-        desc: '내 퇴직금, 어떤 게 유리할까?'
+        desc: '내 퇴직금, 어떤 게 유리할까?',
+        categories: ['재무계산', '연금'],
+        keywords: ['퇴직연금', 'DC', 'DB', '퇴직금', '연금계산', '유불리', '재무설계', '노후준비', '퇴직연금비교']
     },
     '07_us-stock-tax-calculator': {
         name: '해외주식 양도소득세 계산기',
         url: 'https://ustax.ryunadb.kr/',
-        desc: '환율 변동 반영 세금 계산'
+        desc: '환율 변동 반영 세금 계산',
+        categories: ['재무계산', '투자'],
+        keywords: ['해외주식', '양도소득세', '세금계산', '미국주식', '환율', '투자세금', '양도세', '주식세금', '해외투자']
     },
     '08_pension-reform-calculator': {
         name: '연령별 국민연금 인상액 계산기',
         url: 'https://npension.ssp2021.kr/',
-        desc: '2025 개혁안 반영 시뮬레이터'
+        desc: '2025 개혁안 반영 시뮬레이터',
+        categories: ['재무계산', '연금', '정책정보'],
+        keywords: ['국민연금', '연금개혁', '연금인상', '2025개혁안', '연금계산', '노후준비', '연금시뮬레이터', '연금정책']
     },
     '09_snowball-effect-calculator': {
         name: '복리계산기 (스노우볼)',
         url: 'https://snowball.8949ok.kr/',
-        desc: '주식/코인 투자 복리 시뮬레이터'
+        desc: '주식/코인 투자 복리 시뮬레이터',
+        categories: ['재무계산', '투자'],
+        keywords: ['복리계산', '스노우볼', '투자시뮬레이터', '복리효과', '주식투자', '코인투자', '재테크', '자산증식', '투자계산']
     },
     '10_bitcoin-futures-calculator': {
         name: '비트코인 선물 진입수량 계산기',
         url: 'https://btccalculator.seosann.kr/',
-        desc: '리스크 관리 필수 도구'
+        desc: '리스크 관리 필수 도구',
+        categories: ['투자', '암호화폐'],
+        keywords: ['비트코인', '선물거래', '진입수량', '리스크관리', '레버리지', '암호화폐', '선물계산', '포지션관리', '투자도구']
     },
     '11_national-pension-calculator': {
         name: '국민연금 예상수령액 계산기',
         url: 'https://mypension.8949ok.kr/',
-        desc: '내 연금, 얼마나 받을 수 있을까?'
+        desc: '내 연금, 얼마나 받을 수 있을까?',
+        categories: ['재무계산', '연금'],
+        keywords: ['국민연금', '연금계산', '예상수령액', '노후준비', '연금수령', '연금예측', '노령연금', '연금가입']
     },
     '12_size-converter': {
         name: '해외 국가별 사이즈 변환기',
         url: 'https://sizeconvert.o2u.kr/',
-        desc: '신발/의류 사이즈 즉시 변환'
+        desc: '신발/의류 사이즈 즉시 변환',
+        categories: ['생활정보', '쇼핑도구'],
+        keywords: ['사이즈변환', '신발사이즈', '의류사이즈', '해외직구', '사이즈표', '국가별사이즈', '치수변환', '사이즈컨버터']
     },
     '13_pension-breakeven-calculator': {
         name: '국민연금 본전 계산기',
         url: 'https://npensionprofit.seosann.kr/',
-        desc: '몇 살까지 살아야 본전일까?'
+        desc: '몇 살까지 살아야 본전일까?',
+        categories: ['재무계산', '연금'],
+        keywords: ['국민연금', '본전계산', '손익분기점', '연금수익', '노후준비', '연금분석', '수익률계산', '연금손익']
     },
     '14_salary-calculator': {
         name: '연봉 실수령액 계산기',
         url: 'https://salary.winevisionshop.kr/',
-        desc: '4대보험 및 세금 공제 상세 분석'
+        desc: '4대보험 및 세금 공제 상세 분석',
+        categories: ['재무계산', '급여정보'],
+        keywords: ['연봉계산', '실수령액', '4대보험', '세금계산', '급여계산', '월급계산', '소득세', '건강보험', '국민연금']
     },
     '15_ev-subsidy-calculator': {
         name: '전기차 구매 보조금 계산기',
         url: 'https://evcar.ryunadb.kr/',
-        desc: '2026 국비·지방비 통합 조회'
+        desc: '2026 국비·지방비 통합 조회',
+        categories: ['생활정보', '자동차', '정책정보'],
+        keywords: ['전기차', '보조금', '전기차보조금', '국비지원', '지방비', '전기차구매', '2026보조금', '친환경차', 'EV보조금']
     }
 };
 
