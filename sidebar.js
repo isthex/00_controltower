@@ -67,6 +67,11 @@ const allProjects = {
         name: '국민연금 본전 계산기',
         url: 'https://npensionprofit.seosann.kr/',
         desc: '몇 살까지 살아야 본전일까?'
+    },
+    '14_salary-calculator': {
+        name: '연봉 실수령액 계산기/2025',
+        url: 'https://salary.winevisionshop.kr/',
+        desc: '4대보험 및 세금 공제 상세 분석'
     }
 };
 
