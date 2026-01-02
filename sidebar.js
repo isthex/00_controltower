@@ -72,6 +72,11 @@ const allProjects = {
         name: '연봉 실수령액 계산기/2025',
         url: 'https://salary.winevisionshop.kr/',
         desc: '4대보험 및 세금 공제 상세 분석'
+    },
+    '15_ev-subsidy-calculator': {
+        name: '전기차 구매 보조금 계산기',
+        url: 'https://evcar.ryunadb.kr/',
+        desc: '2026 국비·지방비 통합 조회'
     }
 };
 
