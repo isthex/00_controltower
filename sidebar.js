@@ -146,10 +146,16 @@ function initSidebar(config = {}) {
         }
     });
 
-    // 랜덤 섞기 & 10개만 추출
+    // 관련도구 개수 계산
+    const relatedToolsCount = (config.relatedTools && config.relatedTools.length) || 0;
+
+    // 추천도구 개수 = 10 - 관련도구 개수 (최소 0개)
+    const recommendedCount = Math.max(0, 10 - relatedToolsCount);
+
+    // 랜덤 섞기 & 조정된 개수만큼 추출
     const shuffledTools = filteredTools
         .sort(() => Math.random() - 0.5)
-        .slice(0, 10);
+        .slice(0, recommendedCount);
 
     let html = '';
 
