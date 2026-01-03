@@ -124,7 +124,7 @@ const allProjects = {
     },
     '18_real-estate-acquisition-tax-calculator': {
         name: '부동산 취등록세/복비 계산기',
-        url: 'https://tax.ryunadb.kr/',
+        url: 'https://estatecal.8949ok.kr/',
         desc: '취득세, 중개수수료, 이사비 통합 견적',
         categories: ['재무계산', '생활정보', '부동산'],
         keywords: ['부동산취득세', '취등록세', '복비계산', '이사비용', '아파트세금', '부동산계산기', '중개수수료', '취득세율', '다주택자세금']
