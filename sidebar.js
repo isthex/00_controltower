@@ -200,11 +200,18 @@ const allProjects = {
         keywords: ['국민취업지원제도', '구직촉진수당', '1유형', '2유형', '청년특례', '중위소득60%', '고용24', '취업지원금', '실업급여', '구직활동', '병역기간가산', '청년구직자']
     },
     '29_ipo-allocation-calculator': {
-        name: '공모주 청약 배정 예측기',
+        name: '공모주 청약일정 주식배정 예측기',
         url: 'https://ipo.seosann.kr/',
         desc: '균등배정·비례배정 5초 계산',
         categories: ['투자', '재무계산', '주식'],
         keywords: ['공모주', '공모주청약', 'IPO', '균등배정', '비례배정', '5사6입', '청약배정', '공모주계산기', '경쟁률', '증거금', '주식청약', '공모주일정', '38커뮤니케이션', '투자전략']
+    },
+    '30_average-price-calculator': {
+        name: '주식 코인 물타기 계산기',
+        url: 'https://average.ssp2021.kr/',
+        desc: '평단가 계산 + 목표가 역계산 + 수익률 분석',
+        categories: ['투자', '암호화폐', '재무계산'],
+        keywords: ['물타기', '평단가계산기', '코인물타기', '주식물타기', '목표평단가', '수익률', '비트코인', '평균단가', '물타기계산', '분할매수', '손익분기점']
     }
 };
 
@@ -240,8 +247,8 @@ function initSidebar(config = {}) {
     // 관련도구 개수 계산
     const relatedToolsCount = (config.relatedTools && config.relatedTools.length) || 0;
 
-    // 추천도구 개수 = 10 - 관련도구 개수 (최소 0개)
-    const recommendedCount = Math.max(0, 10 - relatedToolsCount);
+    // 추천도구 개수 = 15 - 관련도구 개수 (최소 0개)
+    const recommendedCount = Math.max(0, 15 - relatedToolsCount);
 
     // 랜덤 섞기 & 조정된 개수만큼 추출
     const shuffledTools = filteredTools
