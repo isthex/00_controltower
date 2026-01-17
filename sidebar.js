@@ -219,6 +219,13 @@ const allProjects = {
         desc: '5초 자격확인 + 예상수령액 계산',
         categories: ['재무계산', '복지정보', '정책정보'],
         keywords: ['실업급여', '실업급여 자격', '실업급여 금액', '실업급여 계산기', '실업급여 신청', '구직급여', '자진퇴사 실업급여', '권고사직', '실업급여 조건', '실업급여 정당한 사유', '실업급여 알바', '실업급여 200만원', '실업급여 300만원', '실업급여 수급기간', '2026 실업급여']
+    },
+    '32_esim-compatibility-checker': {
+        name: 'eSIM 호환 기기 확인 + 로밍 요금 비교',
+        url: 'https://esim.winevisionshop.kr/',
+        desc: '5초 기기 확인 + 실시간 요금 비교',
+        categories: ['생활정보', '여행', '통신'],
+        keywords: ['eSIM', 'eSIM 호환 기기', 'eSIM 지원 기기', '아이폰 eSIM', '갤럭시 eSIM', 'eSIM 로밍 비교', 'eSIM 요금 비교', '해외여행 eSIM', 'eSIM 절약', '로밍 vs eSIM', 'eSIM 설정', '일본 eSIM', '미국 eSIM', '유럽 eSIM', 'iPhone 15 eSIM', 'Galaxy S24 eSIM', 'eSIM 7일', 'eSIM 무제한', 'Airalo', 'Holafly', 'Nomad', 'eSIM 가격', 'eSIM 추천', '여행 데이터', 'eSIM 구매']
     }
 };
 
