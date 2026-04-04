@@ -257,10 +257,17 @@ const allProjects = {
     },
     'hangul-is-hard': {
         name: '한글은 어렵다 맞춤법 테스트',
-        url: 'https://tooth.o2u.kr/',
+        url: 'https://hangle.o2u.kr/',
         desc: '되/돼·안/않·로서/로써 맞춤법 퀴즈',
         categories: ['국어', '교육', '퀴즈'],
         keywords: ['맞춤법테스트', '맞춤법퀴즈', '되돼', '안않', '로서로써', '띄어쓰기', '한국어맞춤법', '맞춤법공부', '맞춤법검사']
+    },
+    'toothpaste-ingredient': {
+        name: '내 치약 성분분석기',
+        url: 'https://tooth.o2u.kr/',
+        desc: 'SLS·트리클로산·불소 안전성 검색',
+        categories: ['건강', '생활정보', '분석기'],
+        keywords: ['치약성분', 'SLS', '트리클로산', '불소치약', '치약성분확인', '불화나트륨', '치약안전성', '라우릴황산나트륨', '구내염치약']
     }
 };
 
