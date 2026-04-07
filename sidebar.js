@@ -303,6 +303,13 @@ const allProjects = {
         desc: '뱀꿈·돼지꿈·이빨꿈 해몽 300가지+',
         categories: ['운세', '라이프', '생활정보'],
         keywords: ['꿈해몽', '꿈풀이', '뱀꿈', '돼지꿈', '이빨꿈', '돈꿈', '똥꿈', '태몽', '길몽', '흉몽', '꿈의미', '꿈사전']
+    },
+    'daily-horoscope': {
+        name: '별자리 운세',
+        url: 'https://horoscope.o2u.kr/',
+        desc: '생년월일로 내 별자리 찾아 오늘의 운세 확인',
+        categories: ['운세', '라이프', '오락'],
+        keywords: ['별자리운세', '오늘별자리', '12별자리', '양자리운세', '황소자리운세', '쌍둥이자리운세', '무료운세']
     }
 };
 
@@ -417,10 +424,3 @@ function initSidebar(config = {}) {
 
     sidebarContainer.innerHTML = html;
 }
-    'daily-horoscope': {
-        name: '별자리 운세',
-        url: 'https://horoscope.o2u.kr/',
-        desc: '생년월일로 내 별자리 찾아 오늘의 운세 확인',
-        categories: ['운세', '라이프', '오락'],
-        keywords: ['별자리운세', '오늘별자리', '12별자리', '양자리운세', '황소자리운세', '쌍둥이자리운세', '무료운세']
-    },
