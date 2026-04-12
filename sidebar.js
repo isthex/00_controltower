@@ -338,6 +338,13 @@ const allProjects = {
         desc: 'BMR·TDEE 칼로리 계산',
         categories: ['건강', '계산기', '피트니스'],
         keywords: ['기초대사량', 'BMR', 'TDEE', '칼로리계산', '다이어트칼로리', '하루소모칼로리', '칼로리계산기', '대사량', '체중관리']
+    },
+    'cosmetic-ingredient': {
+        name: '화장품 성분 검색',
+        url: 'https://cosmetic.ttjc.co.kr/',
+        desc: '식약처 공인 2만 성분 DB 검색',
+        categories: ['뷰티', '생활정보', '검색'],
+        keywords: ['화장품', '화장품성분', '성분검색', '성분분석', '전성분', '성분사전', '원료성분', '피부성분', '식약처', '화장품원료']
     }
 };
 
