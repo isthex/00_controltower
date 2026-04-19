@@ -1,0 +1,18 @@
+{
+  "version": 1,
+  "updated_at": "2026-04-19",
+  "channels": [
+    {
+      "slug": "my-pension",
+      "name": "내연금얼마지",
+      "platform": "kakao_channel",
+      "url": "https://pf.kakao.com/_aexlCX",
+      "description": "국민연금 수령액·예상치 무료 계산",
+      "banner_wide":   "이미지/channel-my-pension-wide.png",
+      "banner_square": "이미지/channel-my-pension-square.png",
+      "weight": 1,
+      "active": true
+    }
+  ],
+  "_notes": "새 채널 추가 시 slug·url·이미지 2종만 채우면 됨. weight 높을수록 자주 노출. active=false 면 로테이션 제외."
+}

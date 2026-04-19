@@ -1,0 +1,216 @@
+{
+  "version": 1,
+  "updated_at": "2026-04-20",
+  "_notes": "앱in토스 전 사이트 공통 프로모션 배너 풀. ad-loader.js 가 페이지마다 weighted random 으로 1개씩 렌더. 새 사이트 출시 시 이 파일에만 추가하면 전 사이트 자동 반영. weight 높을수록 자주 노출, active=false 면 로테이션 제외.",
+  "banners": [
+    {
+      "id": "refund",
+      "title": "13월의 월급, 내 환급금 얼마?",
+      "subtitle": "1초 계산 · 무료 조회",
+      "cta": "바로 확인",
+      "url": "https://refund.ledgolf.kr/",
+      "image": null,
+      "tags": ["금융", "환급", "세무"],
+      "weight": 2,
+      "active": true
+    },
+    {
+      "id": "healthfee",
+      "title": "건강보험 환급금 조회",
+      "subtitle": "평균 40만원 환급",
+      "cta": "조회하기",
+      "url": "https://healthfee.o2u.kr/",
+      "image": null,
+      "tags": ["금융", "환급", "건강"],
+      "weight": 2,
+      "active": true
+    },
+    {
+      "id": "oilsupport",
+      "title": "경차 유류 지원금 얼마?",
+      "subtitle": "유류구매카드 · 연 30만원 환급",
+      "cta": "확인하기",
+      "url": "https://oilsupport.wedclub.kr/",
+      "image": null,
+      "tags": ["운전", "금융", "환급"],
+      "weight": 1,
+      "active": true
+    },
+    {
+      "id": "aptprice",
+      "title": "우리 동네 아파트 실거래가",
+      "subtitle": "국토부 공식 데이터",
+      "cta": "조회하기",
+      "url": "https://aptprice.8949ok.kr/",
+      "image": null,
+      "tags": ["부동산", "공공정보"],
+      "weight": 1,
+      "active": true
+    },
+    {
+      "id": "eitc",
+      "title": "근로장려금 받을 수 있나?",
+      "subtitle": "자격 1분 자가진단",
+      "cta": "진단하기",
+      "url": "https://eitc.ledgolf.kr/",
+      "image": null,
+      "tags": ["금융", "복지"],
+      "weight": 1,
+      "active": true
+    },
+    {
+      "id": "my-pension",
+      "title": "내 연금 얼마지?",
+      "subtitle": "국민연금 예상 수령액",
+      "cta": "계산하기",
+      "url": "https://pension.wedclub.kr/",
+      "image": null,
+      "tags": ["금융", "연금"],
+      "weight": 1,
+      "active": true
+    },
+    {
+      "id": "lotto",
+      "title": "이번주 로또 번호",
+      "subtitle": "1~45 중 6개 자동 추첨",
+      "cta": "번호 뽑기",
+      "url": "https://lotto.8949ok.kr/",
+      "image": null,
+      "tags": ["운세", "행운"],
+      "weight": 1,
+      "active": true
+    },
+    {
+      "id": "tarot",
+      "title": "오늘의 타로카드 무료 운세",
+      "subtitle": "연애·금전·직장 3장 스프레드",
+      "cta": "뽑아보기",
+      "url": "https://tarot.itembook.co.kr/",
+      "image": null,
+      "tags": ["운세"],
+      "weight": 1,
+      "active": true
+    },
+    {
+      "id": "horoscope",
+      "title": "12별자리 오늘의 운세",
+      "subtitle": "매일 자동 갱신",
+      "cta": "확인하기",
+      "url": "https://horoscope.o2u.kr/",
+      "image": null,
+      "tags": ["운세"],
+      "weight": 1,
+      "active": true
+    },
+    {
+      "id": "festival",
+      "title": "우리 동네 축제 일정",
+      "subtitle": "여름 불꽃놀이 · 지역축제",
+      "cta": "축제 찾기",
+      "url": "https://festival.wedclub.kr/",
+      "image": null,
+      "tags": ["여행", "축제"],
+      "weight": 1,
+      "active": true
+    },
+    {
+      "id": "culture",
+      "title": "오늘 열리는 문화공연",
+      "subtitle": "전시·공연 주말 일정",
+      "cta": "일정 보기",
+      "url": "https://culture.winevisionshop.kr/",
+      "image": null,
+      "tags": ["여행", "공연"],
+      "weight": 1,
+      "active": true
+    },
+    {
+      "id": "tasty",
+      "title": "현지 맛집 찾기",
+      "subtitle": "한국관광공사 공식 DB",
+      "cta": "맛집 찾기",
+      "url": "https://tasty-restaurant.seosann.kr/",
+      "image": null,
+      "tags": ["여행", "맛집"],
+      "weight": 1,
+      "active": true
+    },
+    {
+      "id": "parking-alert",
+      "title": "주정차단속 SMS 알림 무료",
+      "subtitle": "단속 10분 전 알림 · 20% 할인",
+      "cta": "바로 신청",
+      "url": "https://parking.wedclub.kr/",
+      "image": null,
+      "tags": ["운전", "생활정보"],
+      "weight": 1,
+      "active": true
+    },
+    {
+      "id": "beach-weather",
+      "title": "해수욕장 날씨 실시간",
+      "subtitle": "수온·파고·조석·일출일몰",
+      "cta": "지금 확인",
+      "url": "https://beach.ledgolf.kr/",
+      "image": null,
+      "tags": ["여행", "날씨"],
+      "weight": 1,
+      "active": true
+    },
+    {
+      "id": "pharmacy-open",
+      "title": "지금 열린 약국 찾기",
+      "subtitle": "심야·공휴일 영업시간",
+      "cta": "약국 찾기",
+      "url": "https://pharmacy-open.8949ok.kr/",
+      "image": null,
+      "tags": ["건강", "생활정보"],
+      "weight": 1,
+      "active": true
+    },
+    {
+      "id": "bmi",
+      "title": "내 BMI 지수 확인",
+      "subtitle": "키·체중 · 건강 체크",
+      "cta": "계산하기",
+      "url": "https://bmi.ledgolf.kr/",
+      "image": null,
+      "tags": ["건강"],
+      "weight": 1,
+      "active": true
+    },
+    {
+      "id": "boxoffice",
+      "title": "오늘의 박스오피스",
+      "subtitle": "영화 순위 · 실시간",
+      "cta": "순위 보기",
+      "url": "https://movie.ssp2021.kr/",
+      "image": null,
+      "tags": ["문화", "영화"],
+      "weight": 1,
+      "active": true
+    },
+    {
+      "id": "dday",
+      "title": "D-Day 카운트다운",
+      "subtitle": "기념일 남은 날짜",
+      "cta": "계산",
+      "url": "https://d-day.o2u.kr/",
+      "image": null,
+      "tags": ["생활정보", "달력"],
+      "weight": 1,
+      "active": true
+    },
+    {
+      "id": "snowball",
+      "title": "복리계산기 스노우볼",
+      "subtitle": "저축 복리 시뮬레이터",
+      "cta": "계산",
+      "url": "https://snowball.8949ok.kr/",
+      "image": null,
+      "tags": ["금융", "계산기"],
+      "weight": 1,
+      "active": true
+    }
+  ]
+}
