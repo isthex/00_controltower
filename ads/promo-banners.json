@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated_at": "2026-04-20",
+  "updated_at": "2026-04-20-02",
   "_notes": "앱in토스 전 사이트 공통 프로모션 배너 풀. ad-loader.js 가 페이지마다 weighted random 으로 1개씩 렌더. 새 사이트 출시 시 이 파일에만 추가하면 전 사이트 자동 반영. weight 높을수록 자주 노출, active=false 면 로테이션 제외.",
   "banners": [
     {
@@ -209,6 +209,17 @@
       "url": "https://snowball.8949ok.kr/",
       "image": null,
       "tags": ["금융", "계산기"],
+      "weight": 1,
+      "active": true
+    },
+    {
+      "id": "housing-subscription",
+      "title": "주택청약 가점 5초 계산",
+      "subtitle": "2026년 개정안 · 무주택·부양가족·통장",
+      "cta": "가점 계산",
+      "url": "https://house.ssp2021.kr/",
+      "image": null,
+      "tags": ["부동산", "계산기"],
       "weight": 1,
       "active": true
     }
