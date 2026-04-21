@@ -1,5 +1,5 @@
 {
-  "version": 2,
+  "version": 3,
   "updated_at": "2026-04-21",
   "_notes": "앱in토스 전 사이트 공통 프로모션 배너 풀. ad-loader.js 가 페이지마다 weighted random 으로 1개씩 렌더. 새 사이트 출시 시 이 파일에만 추가하면 전 사이트 자동 반영.\n- type=\"kakao-channel\": 카카오톡 채널 친구추가 (노랑 배경, 슬롯 `data-ad-type=\"kakao-channel\"` 전용 풀)\n- type=\"project\" 또는 미지정: 프로젝트 사이트 배너 (일반 슬롯 기본 풀)\n- weight 높을수록 자주 노출, active=false 면 로테이션 제외",
   "banners": [
@@ -90,13 +90,13 @@
     {
       "id": "my-pension",
       "type": "project",
-      "title": "내 연금 얼마지?",
-      "subtitle": "국민연금 예상 수령액",
+      "title": "내 국민연금 예상수령액",
+      "subtitle": "가입기간·월소득 입력 1분 계산",
       "cta": "계산하기",
-      "url": "https://pension.wedclub.kr/",
+      "url": "https://mypension.8949ok.kr/",
       "image": null,
-      "tags": ["금융", "연금"],
-      "weight": 1,
+      "tags": ["금융", "연금", "계산기"],
+      "weight": 2,
       "active": true
     },
     {
