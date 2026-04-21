@@ -81,7 +81,7 @@
   }
 
   function labelFor(ad) {
-    if (ad && ad.type === 'kakao-channel') return '카톡 채널';
+    if (ad && ad.type === 'kakao-channel') return '💬 무료';
     return 'AD';
   }
 
