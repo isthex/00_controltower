@@ -1,10 +1,35 @@
 {
-  "version": 1,
-  "updated_at": "2026-04-20-02",
-  "_notes": "앱in토스 전 사이트 공통 프로모션 배너 풀. ad-loader.js 가 페이지마다 weighted random 으로 1개씩 렌더. 새 사이트 출시 시 이 파일에만 추가하면 전 사이트 자동 반영. weight 높을수록 자주 노출, active=false 면 로테이션 제외.",
+  "version": 2,
+  "updated_at": "2026-04-21",
+  "_notes": "앱in토스 전 사이트 공통 프로모션 배너 풀. ad-loader.js 가 페이지마다 weighted random 으로 1개씩 렌더. 새 사이트 출시 시 이 파일에만 추가하면 전 사이트 자동 반영.\n- type=\"kakao-channel\": 카카오톡 채널 친구추가 (노랑 배경, 슬롯 `data-ad-type=\"kakao-channel\"` 전용 풀)\n- type=\"project\" 또는 미지정: 프로젝트 사이트 배너 (일반 슬롯 기본 풀)\n- weight 높을수록 자주 노출, active=false 면 로테이션 제외",
   "banners": [
     {
+      "id": "kakao-parking-alert",
+      "type": "kakao-channel",
+      "title": "주정차단속알리미 카톡 채널",
+      "subtitle": "단속 10분 전 SMS 알림 · 무료 친구추가",
+      "cta": "친구 추가",
+      "url": "https://pf.kakao.com/_CEtCX/friend",
+      "image": "images/kakao-channel-bg-wide.png",
+      "tags": ["카카오채널", "운전", "알림"],
+      "weight": 1,
+      "active": true
+    },
+    {
+      "id": "kakao-my-pension",
+      "type": "kakao-channel",
+      "title": "내연금얼마지 카톡 채널",
+      "subtitle": "국민연금 예상수령액 · 건강보험환급 무료 안내",
+      "cta": "친구 추가",
+      "url": "https://pf.kakao.com/_aexlCX/friend",
+      "image": "images/kakao-channel-bg-wide.png",
+      "tags": ["카카오채널", "금융", "연금"],
+      "weight": 1,
+      "active": true
+    },
+    {
       "id": "refund",
+      "type": "project",
       "title": "13월의 월급, 내 환급금 얼마?",
       "subtitle": "1초 계산 · 무료 조회",
       "cta": "바로 확인",
@@ -16,8 +41,9 @@
     },
     {
       "id": "healthfee",
+      "type": "project",
       "title": "건강보험 환급금 조회",
-      "subtitle": "평균 40만원 환급",
+      "subtitle": "평균 135만원 환급",
       "cta": "조회하기",
       "url": "https://healthfee.o2u.kr/",
       "image": null,
@@ -27,6 +53,7 @@
     },
     {
       "id": "oilsupport",
+      "type": "project",
       "title": "경차 유류 지원금 얼마?",
       "subtitle": "유류구매카드 · 연 30만원 환급",
       "cta": "확인하기",
@@ -38,6 +65,7 @@
     },
     {
       "id": "aptprice",
+      "type": "project",
       "title": "우리 동네 아파트 실거래가",
       "subtitle": "국토부 공식 데이터",
       "cta": "조회하기",
@@ -49,6 +77,7 @@
     },
     {
       "id": "eitc",
+      "type": "project",
       "title": "근로장려금 받을 수 있나?",
       "subtitle": "자격 1분 자가진단",
       "cta": "진단하기",
@@ -60,6 +89,7 @@
     },
     {
       "id": "my-pension",
+      "type": "project",
       "title": "내 연금 얼마지?",
       "subtitle": "국민연금 예상 수령액",
       "cta": "계산하기",
@@ -71,6 +101,7 @@
     },
     {
       "id": "lotto",
+      "type": "project",
       "title": "이번주 로또 번호",
       "subtitle": "1~45 중 6개 자동 추첨",
       "cta": "번호 뽑기",
@@ -82,6 +113,7 @@
     },
     {
       "id": "tarot",
+      "type": "project",
       "title": "오늘의 타로카드 무료 운세",
       "subtitle": "연애·금전·직장 3장 스프레드",
       "cta": "뽑아보기",
@@ -93,6 +125,7 @@
     },
     {
       "id": "horoscope",
+      "type": "project",
       "title": "12별자리 오늘의 운세",
       "subtitle": "매일 자동 갱신",
       "cta": "확인하기",
@@ -104,6 +137,7 @@
     },
     {
       "id": "festival",
+      "type": "project",
       "title": "우리 동네 축제 일정",
       "subtitle": "여름 불꽃놀이 · 지역축제",
       "cta": "축제 찾기",
@@ -115,6 +149,7 @@
     },
     {
       "id": "culture",
+      "type": "project",
       "title": "오늘 열리는 문화공연",
       "subtitle": "전시·공연 주말 일정",
       "cta": "일정 보기",
@@ -126,6 +161,7 @@
     },
     {
       "id": "tasty",
+      "type": "project",
       "title": "현지 맛집 찾기",
       "subtitle": "한국관광공사 공식 DB",
       "cta": "맛집 찾기",
@@ -137,6 +173,7 @@
     },
     {
       "id": "parking-alert",
+      "type": "project",
       "title": "주정차단속 SMS 알림 무료",
       "subtitle": "단속 10분 전 알림 · 20% 할인",
       "cta": "바로 신청",
@@ -148,6 +185,7 @@
     },
     {
       "id": "beach-weather",
+      "type": "project",
       "title": "해수욕장 날씨 실시간",
       "subtitle": "수온·파고·조석·일출일몰",
       "cta": "지금 확인",
@@ -159,6 +197,7 @@
     },
     {
       "id": "pharmacy-open",
+      "type": "project",
       "title": "지금 열린 약국 찾기",
       "subtitle": "심야·공휴일 영업시간",
       "cta": "약국 찾기",
@@ -170,6 +209,7 @@
     },
     {
       "id": "bmi",
+      "type": "project",
       "title": "내 BMI 지수 확인",
       "subtitle": "키·체중 · 건강 체크",
       "cta": "계산하기",
@@ -181,6 +221,7 @@
     },
     {
       "id": "boxoffice",
+      "type": "project",
       "title": "오늘의 박스오피스",
       "subtitle": "영화 순위 · 실시간",
       "cta": "순위 보기",
@@ -192,6 +233,7 @@
     },
     {
       "id": "dday",
+      "type": "project",
       "title": "D-Day 카운트다운",
       "subtitle": "기념일 남은 날짜",
       "cta": "계산",
@@ -203,6 +245,7 @@
     },
     {
       "id": "snowball",
+      "type": "project",
       "title": "복리계산기 스노우볼",
       "subtitle": "저축 복리 시뮬레이터",
       "cta": "계산",
@@ -214,6 +257,7 @@
     },
     {
       "id": "housing-subscription",
+      "type": "project",
       "title": "주택청약 가점 5초 계산",
       "subtitle": "2026년 개정안 · 무주택·부양가족·통장",
       "cta": "가점 계산",

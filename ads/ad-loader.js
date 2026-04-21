@@ -4,18 +4,28 @@
  * 사용법: 각 사이트 index.html `</body>` 직전에 1줄 로드
  *   <script src="https://isthex.github.io/00_controltower/ads/ad-loader.js"></script>
  *
+ * 기본 3단 컨셉:
+ *   상단 = 카카오톡 채널 친구추가 (랜덤)  — `data-ad-type="kakao-channel"`
+ *   중단 = Google AdSense (각 사이트 직접 삽입)
+ *   하단 = 프로젝트 사이트 배너 (랜덤)    — 기본 슬롯
+ *
+ * 슬롯 예시:
+ *   <!-- 상단: 카카오채널 -->
+ *   <div class="ad-slot banner-wide" data-slot="kakao_top" data-ad-type="kakao-channel"></div>
+ *
+ *   <!-- 하단: 프로젝트 배너 -->
+ *   <div class="ad-slot banner-wide" data-slot="project_bottom"></div>
+ *
  * 동작:
  *   1. .ad-slot[data-slot] 요소를 모두 찾음
- *   2. promo-banners.json 에서 weighted random 으로 1개씩 뽑아 렌더
- *   3. 현재 사이트 host 와 같은 URL 은 자동 제외 (자기 자신 노출 방지)
- *   4. fetch 실패 시 기본 하우스 광고 표시
+ *   2. 슬롯의 data-ad-type 으로 배너 풀 필터
+ *      - `kakao-channel` → banners[].type === "kakao-channel" 만
+ *      - 미지정/그 외 → banners[].type !== "kakao-channel" (프로젝트 배너)
+ *   3. 필터된 풀에서 weighted random 으로 1개 렌더
+ *   4. 현재 사이트 host 와 같은 URL 은 자동 제외 (자기 자신 노출 방지)
+ *   5. fetch 실패 시 기본 하우스 광고 표시
  *
- * HTML 슬롯:
- *   <div class="ad-slot banner-wide" data-slot="banner_wide_top"></div>
- *   <div class="ad-slot banner-wide" data-slot="banner_wide_bottom"></div>
- *   <div class="ad-slot banner-square" data-slot="banner_square"></div>
- *
- * CSS: 각 사이트 css/style.css 에 `.ad-slot` 클래스 정의 (브랜드 그라디언트)
+ * CSS: 각 사이트 css/style.css 에 `.ad-slot` · `.ad-slot.kakao-channel` 정의
  */
 
 (function () {
@@ -70,6 +80,11 @@
     return BASE + '/' + img;
   }
 
+  function labelFor(ad) {
+    if (ad && ad.type === 'kakao-channel') return '카톡 채널';
+    return 'AD';
+  }
+
   function render(el, ad) {
     if (!ad) {
       // fetch 실패 fallback: 현 사이트 자체 CTA
@@ -86,17 +101,19 @@
     var imgUrl = hasImg ? resolveImage(ad.image) : '';
     var title = esc(ad.title || '');
     var subtitle = esc(ad.subtitle || '');
-    var cta = esc(ad.cta || '자세히 보기');
+    var cta = esc(ad.cta || (ad.type === 'kakao-channel' ? '친구 추가' : '자세히 보기'));
     var url = ad.url || '#';
+    var typeClass = ad.type === 'kakao-channel' ? ' kakao-channel' : '';
 
     var anchor = document.createElement('a');
     anchor.href = url;
     anchor.target = '_blank';
     anchor.rel = 'sponsored noopener';
-    anchor.className = el.className + (hasImg ? ' has-image' : '');
+    anchor.className = el.className + (hasImg ? ' has-image' : '') + typeClass;
     anchor.setAttribute('aria-label', title);
     anchor.setAttribute('data-slot', el.getAttribute('data-slot') || '');
     anchor.setAttribute('data-ad-id', ad.id || '');
+    anchor.setAttribute('data-ad-type', ad.type || 'project');
 
     var html = '';
     if (hasImg) {
@@ -104,7 +121,7 @@
         + ' onerror="this.remove(); this.parentElement.classList.remove(\'has-image\');">';
     }
     html += '<div class="ad-inner">'
-      + '<span class="ad-label">AD</span>'
+      + '<span class="ad-label">' + esc(labelFor(ad)) + '</span>'
       + '<div class="ad-title">' + title + '</div>'
       + (subtitle ? '<div class="ad-subtitle">' + subtitle + '</div>' : '')
       + '<span class="ad-cta">' + cta + '</span>'
@@ -123,22 +140,35 @@
     catch (e) { return false; }
   }
 
+  function poolForSlot(el, banners) {
+    var wanted = (el.getAttribute('data-ad-type') || '').trim();
+    if (wanted === 'kakao-channel') {
+      return banners.filter(function (b) { return b.type === 'kakao-channel'; });
+    }
+    // default: 프로젝트 배너 (카카오채널 제외)
+    return banners.filter(function (b) { return b.type !== 'kakao-channel'; });
+  }
+
   function loadAds() {
     var slots = document.querySelectorAll('.ad-slot[data-slot]');
     if (!slots.length) return;
 
     fetchBanners().then(function (banners) {
       var host = currentHost();
-      // 현재 사이트와 같은 URL 은 풀에서 제외
-      var pool = banners.filter(function (b) { return !sameHost(b.url, host); });
+      // 현재 사이트와 같은 URL 은 전체 풀에서 제외
+      var base = banners.filter(function (b) { return !sameHost(b.url, host); });
 
-      // 같은 페이지에 여러 슬롯이 있으면 광고가 중복되지 않게 뽑아가며 제거
-      var remaining = pool.slice();
+      // 같은 타입의 슬롯이 여러 개면 중복 방지를 위해 타입별 남은 풀 관리
+      var remainingByType = {};
 
       slots.forEach(function (el) {
-        var picked = weightedPick(remaining);
+        var typeKey = (el.getAttribute('data-ad-type') || 'project').trim() || 'project';
+        if (!remainingByType[typeKey]) {
+          remainingByType[typeKey] = poolForSlot(el, base).slice();
+        }
+        var picked = weightedPick(remainingByType[typeKey]);
         if (picked) {
-          remaining = remaining.filter(function (b) { return b !== picked; });
+          remainingByType[typeKey] = remainingByType[typeKey].filter(function (b) { return b !== picked; });
         }
         render(el, picked);
       });
