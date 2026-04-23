@@ -1,6 +1,6 @@
 {
-  "version": 4,
-  "updated_at": "2026-04-22",
+  "version": 5,
+  "updated_at": "2026-04-24",
   "_notes": "앱in토스 전 사이트 공통 프로모션 배너 풀. ad-loader.js 가 페이지마다 weighted random 으로 1개씩 렌더. 새 사이트 출시 시 이 파일에만 추가하면 전 사이트 자동 반영.\n- type=\"kakao-channel\": 카카오톡 채널 친구추가 (노랑 배경, 슬롯 `data-ad-type=\"kakao-channel\"` 전용 풀)\n- type=\"project\" 또는 미지정: 프로젝트 사이트 배너 (일반 슬롯 기본 풀)\n- weight 높을수록 자주 노출, active=false 면 로테이션 제외",
   "banners": [
     {
@@ -42,7 +42,7 @@
       "subtitle": "1초 계산 · 무료 조회",
       "cta": "바로 확인",
       "url": "https://refund.ledgolf.kr/",
-      "image": null,
+      "image": "images/banner-refund.png",
       "tags": [
         "금융",
         "환급",
@@ -58,7 +58,7 @@
       "subtitle": "평균 135만원 환급",
       "cta": "조회하기",
       "url": "https://healthfee.o2u.kr/",
-      "image": null,
+      "image": "images/banner-healthfee.png",
       "tags": [
         "금융",
         "환급",
@@ -74,7 +74,7 @@
       "subtitle": "유류구매카드 · 연 30만원 환급",
       "cta": "확인하기",
       "url": "https://oilsupport.wedclub.kr/",
-      "image": null,
+      "image": "images/banner-oilsupport.png",
       "tags": [
         "운전",
         "금융",
@@ -90,7 +90,7 @@
       "subtitle": "국토부 공식 데이터",
       "cta": "조회하기",
       "url": "https://aptprice.8949ok.kr/",
-      "image": null,
+      "image": "images/banner-aptprice.png",
       "tags": [
         "부동산",
         "공공정보"
@@ -105,7 +105,7 @@
       "subtitle": "자격 1분 자가진단",
       "cta": "진단하기",
       "url": "https://eitc.ryunadb.kr/",
-      "image": null,
+      "image": "images/banner-eitc.png",
       "tags": [
         "금융",
         "복지"
@@ -120,7 +120,7 @@
       "subtitle": "가입기간·월소득 입력 1분 계산",
       "cta": "계산하기",
       "url": "https://mypension.8949ok.kr/",
-      "image": null,
+      "image": "images/banner-my-pension.png",
       "tags": [
         "금융",
         "연금",
@@ -136,7 +136,7 @@
       "subtitle": "1~45 중 6개 자동 추첨",
       "cta": "번호 뽑기",
       "url": "https://lotto.8949ok.kr/",
-      "image": null,
+      "image": "images/banner-lotto.png",
       "tags": [
         "운세",
         "행운"
@@ -151,7 +151,7 @@
       "subtitle": "연애·금전·직장 3장 스프레드",
       "cta": "뽑아보기",
       "url": "https://tarot.itembook.co.kr/",
-      "image": null,
+      "image": "images/banner-tarot.png",
       "tags": [
         "운세"
       ],
@@ -165,7 +165,7 @@
       "subtitle": "매일 자동 갱신",
       "cta": "확인하기",
       "url": "https://horoscope.o2u.kr/",
-      "image": null,
+      "image": "images/banner-horoscope.png",
       "tags": [
         "운세"
       ],
@@ -179,7 +179,7 @@
       "subtitle": "여름 불꽃놀이 · 지역축제",
       "cta": "축제 찾기",
       "url": "https://festival.wedclub.kr/",
-      "image": null,
+      "image": "images/banner-festival.png",
       "tags": [
         "여행",
         "축제"
@@ -194,7 +194,7 @@
       "subtitle": "전시·공연 주말 일정",
       "cta": "일정 보기",
       "url": "https://culture.winevisionshop.kr/",
-      "image": null,
+      "image": "images/banner-culture.png",
       "tags": [
         "여행",
         "공연"
@@ -209,7 +209,7 @@
       "subtitle": "한국관광공사 공식 DB",
       "cta": "맛집 찾기",
       "url": "https://tasty-restaurant.seosann.kr/",
-      "image": null,
+      "image": "images/banner-tasty.png",
       "tags": [
         "여행",
         "맛집"
@@ -224,7 +224,7 @@
       "subtitle": "단속 10분 전 알림 · 20% 할인",
       "cta": "바로 신청",
       "url": "https://parking.wedclub.kr/",
-      "image": null,
+      "image": "images/banner-parking-alert.png",
       "tags": [
         "운전",
         "생활정보"
@@ -239,7 +239,7 @@
       "subtitle": "수온·파고·조석·일출일몰",
       "cta": "지금 확인",
       "url": "https://beach.ledgolf.kr/",
-      "image": null,
+      "image": "images/banner-beach-weather.png",
       "tags": [
         "여행",
         "날씨"
@@ -254,7 +254,7 @@
       "subtitle": "심야·공휴일 영업시간",
       "cta": "약국 찾기",
       "url": "https://pharmacy-open.8949ok.kr/",
-      "image": null,
+      "image": "images/banner-pharmacy-open.png",
       "tags": [
         "건강",
         "생활정보"
@@ -269,7 +269,7 @@
       "subtitle": "키·체중 · 건강 체크",
       "cta": "계산하기",
       "url": "https://bmi.ledgolf.kr/",
-      "image": null,
+      "image": "images/banner-bmi.png",
       "tags": [
         "건강"
       ],
@@ -283,7 +283,7 @@
       "subtitle": "영화 순위 · 실시간",
       "cta": "순위 보기",
       "url": "https://movie.ssp2021.kr/",
-      "image": null,
+      "image": "images/banner-boxoffice.png",
       "tags": [
         "문화",
         "영화"
@@ -298,7 +298,7 @@
       "subtitle": "기념일 남은 날짜",
       "cta": "계산",
       "url": "https://d-day.o2u.kr/",
-      "image": null,
+      "image": "images/banner-dday.png",
       "tags": [
         "생활정보",
         "달력"
@@ -313,7 +313,7 @@
       "subtitle": "저축 복리 시뮬레이터",
       "cta": "계산",
       "url": "https://snowball.8949ok.kr/",
-      "image": null,
+      "image": "images/banner-snowball.png",
       "tags": [
         "금융",
         "계산기"
@@ -328,7 +328,7 @@
       "subtitle": "2026년 개정안 · 무주택·부양가족·통장",
       "cta": "가점 계산",
       "url": "https://house.ssp2021.kr/",
-      "image": null,
+      "image": "images/banner-housing-subscription.png",
       "tags": [
         "부동산",
         "계산기"
@@ -343,7 +343,7 @@
       "subtitle": "만 55세+ · 공시가 12억 이하",
       "cta": "연금액 계산",
       "url": "https://housepension.seosann.kr/",
-      "image": null,
+      "image": "images/banner-housepension.png",
       "tags": [
         "부동산",
         "금융",
@@ -359,7 +359,7 @@
       "subtitle": "공부·운동·요리 카운트다운",
       "cta": "시작하기",
       "url": "https://timer.8949ok.kr/",
-      "image": null,
+      "image": "images/banner-timer.png",
       "tags": [
         "도구",
         "시간"
@@ -374,7 +374,7 @@
       "subtitle": "관계별 적정 금액 즉시",
       "cta": "계산하기",
       "url": "https://weddingpay.8949ok.kr/",
-      "image": null,
+      "image": "images/banner-wedding.png",
       "tags": [
         "계산기",
         "경조사"
@@ -389,7 +389,7 @@
       "subtitle": "퇴직연금 10년 차 비교",
       "cta": "비교하기",
       "url": "https://dcdb.ryunadb.kr/",
-      "image": null,
+      "image": "images/banner-dcdb.png",
       "tags": [
         "금융",
         "연금",
@@ -405,7 +405,7 @@
       "subtitle": "환율 포함 정확한 세금",
       "cta": "계산하기",
       "url": "https://ustax.ryunadb.kr/",
-      "image": null,
+      "image": "images/banner-ustax.png",
       "tags": [
         "금융",
         "세무",
@@ -421,7 +421,7 @@
       "subtitle": "연령별 2026 개혁 시뮬",
       "cta": "확인",
       "url": "https://npension.ssp2021.kr/",
-      "image": null,
+      "image": "images/banner-npension.png",
       "tags": [
         "금융",
         "연금",
@@ -437,7 +437,7 @@
       "subtitle": "리스크 관리 · 청산가 산출",
       "cta": "계산",
       "url": "https://btccalculator.seosann.kr/",
-      "image": null,
+      "image": "images/banner-btc.png",
       "tags": [
         "투자",
         "코인",
@@ -453,7 +453,7 @@
       "subtitle": "신발·의류 국가별 비교",
       "cta": "변환",
       "url": "https://sizeconvert.o2u.kr/",
-      "image": null,
+      "image": "images/banner-size.png",
       "tags": [
         "도구",
         "해외"
@@ -468,7 +468,7 @@
       "subtitle": "조기 vs 연기 손익분기",
       "cta": "계산",
       "url": "https://npensionprofit.seosann.kr/",
-      "image": null,
+      "image": "images/banner-npensionprofit.png",
       "tags": [
         "금융",
         "연금",
@@ -484,7 +484,7 @@
       "subtitle": "4대보험·세금 자동 차감",
       "cta": "계산",
       "url": "https://salary.winevisionshop.kr/",
-      "image": null,
+      "image": "images/banner-salary.png",
       "tags": [
         "금융",
         "계산기",
@@ -500,7 +500,7 @@
       "subtitle": "국비·지방비 통합 조회",
       "cta": "확인",
       "url": "https://evcar.ryunadb.kr/",
-      "image": null,
+      "image": "images/banner-ev.png",
       "tags": [
         "자동차",
         "보조금"
@@ -515,7 +515,7 @@
       "subtitle": "공급가·세액 분리",
       "cta": "계산",
       "url": "https://addtax.ledgolf.kr/",
-      "image": null,
+      "image": "images/banner-vat.png",
       "tags": [
         "세무",
         "계산기",
@@ -531,7 +531,7 @@
       "subtitle": "평균임금 × 근속연수",
       "cta": "계산",
       "url": "https://retire.ledgolf.kr/",
-      "image": null,
+      "image": "images/banner-retire.png",
       "tags": [
         "금융",
         "퇴직",
@@ -547,7 +547,7 @@
       "subtitle": "부동산 구매 총비용",
       "cta": "계산",
       "url": "https://estatecal.8949ok.kr/",
-      "image": null,
+      "image": "images/banner-estate.png",
       "tags": [
         "부동산",
         "세무"
@@ -562,7 +562,7 @@
       "subtitle": "실사용액 기준 예상치",
       "cta": "조회",
       "url": "https://modoocard.seosann.kr/",
-      "image": null,
+      "image": "images/banner-modoocard.png",
       "tags": [
         "금융",
         "카드",
@@ -578,7 +578,7 @@
       "subtitle": "결혼·자녀·월세 공제",
       "cta": "조회",
       "url": "https://yearendtax.o2u.kr/",
-      "image": null,
+      "image": "images/banner-yearendtax.png",
       "tags": [
         "세무",
         "환급"
@@ -593,7 +593,7 @@
       "subtitle": "복지 혜택 대상 확인",
       "cta": "확인",
       "url": "https://medianincome.8949ok.kr/",
-      "image": null,
+      "image": "images/banner-median.png",
       "tags": [
         "복지",
         "소득"
@@ -608,7 +608,7 @@
       "subtitle": "자격 5초 자가진단",
       "cta": "진단",
       "url": "https://housesupport.ssp2021.kr/",
-      "image": null,
+      "image": "images/banner-youth-rent.png",
       "tags": [
         "복지",
         "청년",
@@ -624,7 +624,7 @@
       "subtitle": "세율·순서 최적화",
       "cta": "계산",
       "url": "https://personalpension.ryunadb.kr/",
-      "image": null,
+      "image": "images/banner-personal-pension.png",
       "tags": [
         "금융",
         "연금",
@@ -640,7 +640,7 @@
       "subtitle": "NICE · KCB 등급 확인",
       "cta": "조회",
       "url": "https://credit.ledgolf.kr/",
-      "image": null,
+      "image": "images/banner-credit.png",
       "tags": [
         "금융",
         "신용"
@@ -655,7 +655,7 @@
       "subtitle": "월 최대 지원액 확인",
       "cta": "확인",
       "url": "https://hanggi.8949ok.kr/",
-      "image": null,
+      "image": "images/banner-meal.png",
       "tags": [
         "복지",
         "직장인"
@@ -670,7 +670,7 @@
       "subtitle": "자격 자가진단",
       "cta": "진단",
       "url": "https://village.ledgolf.kr/",
-      "image": null,
+      "image": "images/banner-rural.png",
       "tags": [
         "복지",
         "농촌"
@@ -685,7 +685,7 @@
       "subtitle": "1·2유형 지원금 계산",
       "cta": "진단",
       "url": "https://worksupport.ryunadb.kr/",
-      "image": null,
+      "image": "images/banner-worksupport.png",
       "tags": [
         "복지",
         "취업"
@@ -700,7 +700,7 @@
       "subtitle": "균등·비례 자동 계산",
       "cta": "예측",
       "url": "https://ipo.seosann.kr/",
-      "image": null,
+      "image": "images/banner-ipo.png",
       "tags": [
         "투자",
         "주식"
@@ -715,7 +715,7 @@
       "subtitle": "목표가 역산 · 손익",
       "cta": "계산",
       "url": "https://average.ssp2021.kr/",
-      "image": null,
+      "image": "images/banner-average.png",
       "tags": [
         "투자",
         "주식",
@@ -731,7 +731,7 @@
       "subtitle": "자격 + 예상수령액",
       "cta": "진단",
       "url": "https://unemp.winevisionshop.kr/",
-      "image": null,
+      "image": "images/banner-unemp.png",
       "tags": [
         "복지",
         "실업"
@@ -746,7 +746,7 @@
       "subtitle": "해외 로밍 요금 비교",
       "cta": "확인",
       "url": "https://esim.winevisionshop.kr/",
-      "image": null,
+      "image": "images/banner-esim.png",
       "tags": [
         "도구",
         "해외",
@@ -762,7 +762,7 @@
       "subtitle": "소득분위 기반 예상액",
       "cta": "진단",
       "url": "https://scholarship.ledgolf.kr/",
-      "image": null,
+      "image": "images/banner-scholarship.png",
       "tags": [
         "복지",
         "장학금",
@@ -778,7 +778,7 @@
       "subtitle": "단리 · 복리 비교",
       "cta": "계산",
       "url": "https://saving.ledgolf.kr/",
-      "image": null,
+      "image": "images/banner-saving.png",
       "tags": [
         "금융",
         "저축"
