@@ -81,8 +81,28 @@
   }
 
   function labelFor(ad) {
-    if (ad && ad.type === 'kakao-channel') return '💬 무료';
+    if (ad && ad.type === 'kakao-channel') return '무료';
     return 'AD';
+  }
+
+  // 카카오 채널 전용 공용 스타일을 host 페이지에 1회 주입
+  // (30+ 사이트 + WordPress 플러그인 동시 반영)
+  var KAKAO_STYLE_ID = 'central-ads-kakao-style';
+  function injectKakaoStyles() {
+    if (document.getElementById(KAKAO_STYLE_ID)) return;
+    var css = [
+      '.ad-slot.kakao-channel,.ad-slot[data-ad-type="kakao-channel"]{background:#FEE500 !important;color:#3C1E1E !important;border-color:rgba(0,0,0,.08) !important}',
+      '.ad-slot.kakao-channel.has-image .ad-inner,.ad-slot[data-ad-type="kakao-channel"].has-image .ad-inner{background:linear-gradient(90deg,rgba(254,229,0,1) 0%,rgba(254,229,0,.95) 38%,rgba(254,229,0,.55) 58%,rgba(254,229,0,0) 88%) !important}',
+      '.ad-slot.kakao-channel .ad-title,.ad-slot[data-ad-type="kakao-channel"] .ad-title{color:#3C1E1E !important;text-shadow:none !important}',
+      '.ad-slot.kakao-channel .ad-subtitle,.ad-slot[data-ad-type="kakao-channel"] .ad-subtitle{color:rgba(60,30,30,.82) !important;opacity:1 !important}',
+      '.ad-slot.kakao-channel .ad-label,.ad-slot[data-ad-type="kakao-channel"] .ad-label{background:#3C1E1E !important;color:#FEE500 !important;font-weight:700 !important;letter-spacing:.3px !important}',
+      '.ad-slot.kakao-channel .ad-cta,.ad-slot[data-ad-type="kakao-channel"] .ad-cta{background:#3C1E1E !important;color:#FEE500 !important;border:1px solid transparent !important}',
+      '.ad-slot.kakao-channel .ad-cta:hover,.ad-slot[data-ad-type="kakao-channel"] .ad-cta:hover{background:#1f100f !important;color:#FEE500 !important}'
+    ].join('');
+    var s = document.createElement('style');
+    s.id = KAKAO_STYLE_ID;
+    s.textContent = css;
+    (document.head || document.documentElement).appendChild(s);
   }
 
   function render(el, ad) {
@@ -150,6 +170,7 @@
   }
 
   function loadAds() {
+    injectKakaoStyles();
     var slots = document.querySelectorAll('.ad-slot[data-slot]');
     if (!slots.length) return;
 
