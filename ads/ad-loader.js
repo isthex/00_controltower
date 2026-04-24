@@ -97,7 +97,13 @@
       '.ad-slot.kakao-channel .ad-subtitle,.ad-slot[data-ad-type="kakao-channel"] .ad-subtitle{color:rgba(60,30,30,.82) !important;opacity:1 !important}',
       '.ad-slot.kakao-channel .ad-label,.ad-slot[data-ad-type="kakao-channel"] .ad-label{background:#3C1E1E !important;color:#FEE500 !important;font-weight:700 !important;letter-spacing:.3px !important}',
       '.ad-slot.kakao-channel .ad-cta,.ad-slot[data-ad-type="kakao-channel"] .ad-cta{background:#3C1E1E !important;color:#FEE500 !important;border:1px solid transparent !important}',
-      '.ad-slot.kakao-channel .ad-cta:hover,.ad-slot[data-ad-type="kakao-channel"] .ad-cta:hover{background:#1f100f !important;color:#FEE500 !important}'
+      '.ad-slot.kakao-channel .ad-cta:hover,.ad-slot[data-ad-type="kakao-channel"] .ad-cta:hover{background:#1f100f !important;color:#FEE500 !important}',
+      // 프로필 (채널 아이콘 + 채널명) — 카톡 톡방 상단 느낌
+      '.ad-slot .ad-profile{display:flex !important;align-items:center !important;gap:8px !important;margin:0 0 6px !important}',
+      '.ad-slot .ad-profile-img{width:36px !important;height:36px !important;border-radius:50% !important;object-fit:cover !important;background:#fff !important;box-shadow:0 1px 3px rgba(0,0,0,.12) !important;flex-shrink:0 !important}',
+      '.ad-slot .ad-profile-name{font-size:12px !important;font-weight:600 !important;letter-spacing:-.2px !important;color:inherit !important;opacity:.85 !important;line-height:1.2 !important}',
+      '.ad-slot.kakao-channel .ad-profile-img,.ad-slot[data-ad-type="kakao-channel"] .ad-profile-img{box-shadow:0 1px 4px rgba(60,30,30,.2) !important}',
+      '.ad-slot.kakao-channel .ad-profile-name,.ad-slot[data-ad-type="kakao-channel"] .ad-profile-name{color:#3C1E1E !important;opacity:.9 !important}'
     ].join('');
     var s = document.createElement('style');
     s.id = KAKAO_STYLE_ID;
@@ -113,11 +119,13 @@
         ad = {
           id: 'fallback-kakao-parking-alert',
           type: 'kakao-channel',
+          channel_name: '주정차단속알리미',
           title: '주정차단속알리미 바로가기',
           subtitle: '주정차단속 10분 전 문자 알림 · 완전 무료',
           cta: '지금 등록',
           url: 'https://pf.kakao.com/_CEtCX/friend',
-          image: 'images/kakao-channel-bg-wide.png'
+          image: 'images/kakao-channel-bg-wide.png',
+          profile_image: 'images/kakao-profile-parking-alert.png'
         };
       } else {
         ad = {
@@ -148,11 +156,15 @@
     var url = ad.url || '#';
     var typeClass = ad.type === 'kakao-channel' ? ' kakao-channel' : '';
 
+    var hasProfile = ad.profile_image && String(ad.profile_image).length > 0;
+    var profileUrl = hasProfile ? resolveImage(ad.profile_image) : '';
+    var channelName = esc(ad.channel_name || '');
+
     var anchor = document.createElement('a');
     anchor.href = url;
     anchor.target = '_blank';
     anchor.rel = 'sponsored noopener';
-    anchor.className = el.className + (hasImg ? ' has-image' : '') + typeClass;
+    anchor.className = el.className + (hasImg ? ' has-image' : '') + (hasProfile ? ' has-profile' : '') + typeClass;
     anchor.setAttribute('aria-label', title);
     anchor.setAttribute('data-slot', el.getAttribute('data-slot') || '');
     anchor.setAttribute('data-ad-id', ad.id || '');
@@ -160,11 +172,20 @@
 
     var html = '';
     if (hasImg) {
-      html += '<img src="' + esc(imgUrl) + '" alt="" loading="lazy"'
+      html += '<img class="ad-bg" src="' + esc(imgUrl) + '" alt="" loading="lazy"'
         + ' onerror="this.remove(); this.parentElement.classList.remove(\'has-image\');">';
     }
-    html += '<div class="ad-inner">'
-      + '<span class="ad-label">' + esc(labelFor(ad)) + '</span>'
+    html += '<div class="ad-inner">';
+    if (hasProfile) {
+      html += '<div class="ad-profile">'
+        + '<img class="ad-profile-img" src="' + esc(profileUrl) + '" alt="" loading="lazy"'
+        + ' onerror="this.parentElement.remove(); ">';
+      if (channelName) {
+        html += '<span class="ad-profile-name">' + channelName + '</span>';
+      }
+      html += '</div>';
+    }
+    html += '<span class="ad-label">' + esc(labelFor(ad)) + '</span>'
       + '<div class="ad-title">' + title + '</div>'
       + (subtitle ? '<div class="ad-subtitle">' + subtitle + '</div>' : '')
       + '<span class="ad-cta">' + cta + '</span>'

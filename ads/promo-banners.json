@@ -6,11 +6,13 @@
     {
       "id": "kakao-parking-alert",
       "type": "kakao-channel",
+      "channel_name": "주정차단속알리미",
       "title": "주정차단속알리미 바로가기",
       "subtitle": "주정차단속 10분 전 문자 알림 · 완전 무료",
       "cta": "지금 등록",
       "url": "https://pf.kakao.com/_CEtCX/friend",
       "image": "images/kakao-channel-bg-wide.png",
+      "profile_image": "images/kakao-profile-parking-alert.png",
       "tags": [
         "카카오채널",
         "운전",
@@ -22,11 +24,13 @@
     {
       "id": "kakao-my-pension",
       "type": "kakao-channel",
+      "channel_name": "봄날 노후자금연구소",
       "title": "내 연금 얼마 받지? 1분 확인",
       "subtitle": "국민연금 예상액 + 건보료 환급 꿀팁 매주",
       "cta": "무료로 받기",
       "url": "https://pf.kakao.com/_aexlCX/friend",
       "image": "images/kakao-channel-bg-wide.png",
+      "profile_image": "images/kakao-profile-mypension.png",
       "tags": [
         "카카오채널",
         "금융",
