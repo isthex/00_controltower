@@ -100,15 +100,15 @@
       '.ad-slot.kakao-channel .ad-cta:hover,.ad-slot[data-ad-type="kakao-channel"] .ad-cta:hover{background:#1f100f !important;color:#FEE500 !important}',
       // has-profile 레이아웃 — 상단 [로고박스+텍스트 row] + 하단 [독립 CTA] (로고 침범 없음)
       // .ad-inner 자체는 column 유지 (WFM 플러그인 호환), 내부 .ad-top-row 가 row
-      'body a.ad-slot.has-profile .ad-inner,body .ad-slot.has-profile[data-ad-type] .ad-inner{flex-direction:column !important;align-items:flex-start !important;justify-content:center !important;gap:14px !important}',
-      'body a.ad-slot.has-profile .ad-top-row,body .ad-slot.has-profile .ad-top-row{display:flex !important;flex-direction:row !important;align-items:center !important;gap:18px !important;width:100% !important;margin:0 !important;padding:0 !important}',
+      'body a.ad-slot.has-profile .ad-inner,body .ad-slot.has-profile[data-ad-type] .ad-inner{flex-direction:column !important;align-items:flex-start !important;justify-content:center !important;gap:10px !important;padding-top:18px !important;padding-bottom:18px !important}',
+      'body a.ad-slot.has-profile .ad-top-row,body .ad-slot.has-profile .ad-top-row{display:flex !important;flex-direction:row !important;align-items:center !important;gap:16px !important;width:100% !important;margin:0 !important;padding:0 !important}',
       'body a.ad-slot .ad-logo-box,body .ad-slot .ad-logo-box{width:52px !important;height:52px !important;flex-shrink:0 !important;border-radius:11px !important;overflow:hidden !important;background:transparent !important;box-shadow:0 2px 8px rgba(0,0,0,.15) !important;display:block !important;padding:0 !important;margin:0 !important;position:relative !important;z-index:2 !important}',
       'body a.ad-slot .ad-profile-img,body .ad-slot .ad-profile-img{width:100% !important;height:100% !important;object-fit:cover !important;display:block !important;border-radius:11px !important;margin:0 !important;padding:0 !important;background:#fff !important}',
       'body a.ad-slot.has-profile .ad-text,body .ad-slot.has-profile .ad-text{display:flex !important;flex-direction:column !important;justify-content:center !important;flex:1 1 auto !important;min-width:0 !important;margin:0 !important;padding:0 !important}',
-      'body a.ad-slot.has-profile .ad-cta,body .ad-slot.has-profile .ad-cta{align-self:flex-start !important;margin:0 !important}',
+      'body a.ad-slot.has-profile .ad-cta,body .ad-slot.has-profile .ad-cta{align-self:flex-start !important;margin:0 0 0 68px !important}',
       'body a.ad-slot.kakao-channel .ad-logo-box,body .ad-slot[data-ad-type="kakao-channel"] .ad-logo-box{box-shadow:0 3px 8px rgba(60,30,30,.25) !important}',
       // 모바일
-      '@media (max-width:640px){body a.ad-slot.has-profile .ad-inner{gap:10px !important}body a.ad-slot.has-profile .ad-top-row{gap:12px !important}body a.ad-slot .ad-logo-box,body .ad-slot .ad-logo-box{width:42px !important;height:42px !important;border-radius:9px !important}}'
+      '@media (max-width:640px){body a.ad-slot.has-profile .ad-inner{gap:8px !important;padding-top:14px !important;padding-bottom:14px !important}body a.ad-slot.has-profile .ad-top-row{gap:12px !important}body a.ad-slot.has-profile .ad-cta{margin-left:54px !important}body a.ad-slot .ad-logo-box,body .ad-slot .ad-logo-box{width:42px !important;height:42px !important;border-radius:9px !important}}'
     ].join('');
     var s = document.createElement('style');
     s.id = KAKAO_STYLE_ID;
