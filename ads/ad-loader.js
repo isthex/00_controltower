@@ -98,15 +98,15 @@
       '.ad-slot.kakao-channel .ad-label,.ad-slot[data-ad-type="kakao-channel"] .ad-label{background:#3C1E1E !important;color:#FEE500 !important;font-weight:700 !important;letter-spacing:.3px !important}',
       '.ad-slot.kakao-channel .ad-cta,.ad-slot[data-ad-type="kakao-channel"] .ad-cta{background:#3C1E1E !important;color:#FEE500 !important;border:1px solid transparent !important}',
       '.ad-slot.kakao-channel .ad-cta:hover,.ad-slot[data-ad-type="kakao-channel"] .ad-cta:hover{background:#1f100f !important;color:#FEE500 !important}',
-      // has-profile 레이아웃 — "보이지 않는 로고박스" 방식
-      // .ad-inner 에 왼쪽 padding 으로 프로필용 공간 확보 (글씨 시작점 강제 우측 이동)
-      // 프로필은 absolute 로 그 공간에 세로 중앙 배치 → 기존 flex-column 레이아웃 건드리지 않음
-      'body .ad-slot.has-profile .ad-inner,body a.ad-slot.has-profile .ad-inner{padding-left:114px !important}',
-      'body .ad-slot .ad-profile-img,body a.ad-slot .ad-profile-img{position:absolute !important;left:22px !important;top:50% !important;transform:translateY(-50%) !important;width:84px !important;height:84px !important;border-radius:50% !important;object-fit:cover !important;background:#fff !important;box-shadow:0 3px 10px rgba(0,0,0,.18) !important;margin:0 !important;padding:0 !important;z-index:2 !important}',
-      'body .ad-slot .ad-text,body a.ad-slot .ad-text{display:flex !important;flex-direction:column !important;justify-content:center !important;margin:0 !important;padding:0 !important}',
-      'body .ad-slot.kakao-channel .ad-profile-img,body .ad-slot[data-ad-type="kakao-channel"] .ad-profile-img{box-shadow:0 3px 8px rgba(60,30,30,.25) !important;background:#fff !important}',
+      // has-profile 레이아웃 — 왼쪽 투명 로고박스 + 오른쪽 텍스트 블록 (flex-row 강제)
+      // specificity 강화: body + a.ad-slot + .has-profile 조합으로 WFM 플러그인·테마 CSS 덮어쓰기
+      'body a.ad-slot.has-profile .ad-inner,body .ad-slot.has-profile[data-ad-type] .ad-inner{flex-direction:row !important;align-items:center !important;gap:18px !important;justify-content:flex-start !important}',
+      'body a.ad-slot .ad-logo-box,body .ad-slot .ad-logo-box{width:84px !important;height:84px !important;flex-shrink:0 !important;border-radius:14px !important;overflow:hidden !important;background:transparent !important;box-shadow:0 3px 10px rgba(0,0,0,.18) !important;display:block !important;padding:0 !important;margin:0 !important;position:relative !important;z-index:2 !important}',
+      'body a.ad-slot .ad-profile-img,body .ad-slot .ad-profile-img{width:100% !important;height:100% !important;object-fit:cover !important;display:block !important;border-radius:14px !important;margin:0 !important;padding:0 !important;background:#fff !important}',
+      'body a.ad-slot .ad-text,body .ad-slot .ad-text{display:flex !important;flex-direction:column !important;justify-content:center !important;flex:1 1 auto !important;min-width:0 !important;margin:0 !important;padding:0 !important}',
+      'body a.ad-slot.kakao-channel .ad-logo-box,body .ad-slot[data-ad-type="kakao-channel"] .ad-logo-box{box-shadow:0 3px 8px rgba(60,30,30,.25) !important}',
       // 모바일
-      '@media (max-width:640px){body .ad-slot.has-profile .ad-inner{padding-left:84px !important}body .ad-slot .ad-profile-img{width:62px !important;height:62px !important;left:14px !important}}'
+      '@media (max-width:640px){body a.ad-slot.has-profile .ad-inner{gap:12px !important}body a.ad-slot .ad-logo-box,body .ad-slot .ad-logo-box{width:62px !important;height:62px !important;border-radius:12px !important}}'
     ].join('');
     var s = document.createElement('style');
     s.id = KAKAO_STYLE_ID;
@@ -180,10 +180,12 @@
     }
     html += '<div class="ad-inner">';
     if (hasProfile) {
-      html += '<img class="ad-profile-img" src="' + esc(profileUrl) + '"'
+      html += '<div class="ad-logo-box">'
+        + '<img class="ad-profile-img" src="' + esc(profileUrl) + '"'
         + (channelName ? ' alt="' + channelName + '"' : ' alt=""')
         + ' loading="lazy"'
-        + ' onerror="this.remove(); this.parentElement.parentElement.classList.remove(\'has-profile\');">';
+        + ' onerror="this.parentElement.parentElement.parentElement.classList.remove(\'has-profile\'); this.parentElement.remove();">'
+        + '</div>';
     }
     html += '<div class="ad-text">'
       + '<span class="ad-label">' + esc(labelFor(ad)) + '</span>'
