@@ -98,15 +98,17 @@
       '.ad-slot.kakao-channel .ad-label,.ad-slot[data-ad-type="kakao-channel"] .ad-label{background:#3C1E1E !important;color:#FEE500 !important;font-weight:700 !important;letter-spacing:.3px !important}',
       '.ad-slot.kakao-channel .ad-cta,.ad-slot[data-ad-type="kakao-channel"] .ad-cta{background:#3C1E1E !important;color:#FEE500 !important;border:1px solid transparent !important}',
       '.ad-slot.kakao-channel .ad-cta:hover,.ad-slot[data-ad-type="kakao-channel"] .ad-cta:hover{background:#1f100f !important;color:#FEE500 !important}',
-      // has-profile 레이아웃 — 왼쪽 투명 로고박스 + 오른쪽 텍스트 블록 (flex-row 강제)
-      // specificity 강화: body + a.ad-slot + .has-profile 조합으로 WFM 플러그인·테마 CSS 덮어쓰기
-      'body a.ad-slot.has-profile .ad-inner,body .ad-slot.has-profile[data-ad-type] .ad-inner{flex-direction:row !important;align-items:center !important;gap:18px !important;justify-content:flex-start !important}',
+      // has-profile 레이아웃 — 상단 [로고박스+텍스트 row] + 하단 [독립 CTA] (로고 침범 없음)
+      // .ad-inner 자체는 column 유지 (WFM 플러그인 호환), 내부 .ad-top-row 가 row
+      'body a.ad-slot.has-profile .ad-inner,body .ad-slot.has-profile[data-ad-type] .ad-inner{flex-direction:column !important;align-items:flex-start !important;justify-content:center !important;gap:14px !important}',
+      'body a.ad-slot.has-profile .ad-top-row,body .ad-slot.has-profile .ad-top-row{display:flex !important;flex-direction:row !important;align-items:center !important;gap:18px !important;width:100% !important;margin:0 !important;padding:0 !important}',
       'body a.ad-slot .ad-logo-box,body .ad-slot .ad-logo-box{width:84px !important;height:84px !important;flex-shrink:0 !important;border-radius:14px !important;overflow:hidden !important;background:transparent !important;box-shadow:0 3px 10px rgba(0,0,0,.18) !important;display:block !important;padding:0 !important;margin:0 !important;position:relative !important;z-index:2 !important}',
       'body a.ad-slot .ad-profile-img,body .ad-slot .ad-profile-img{width:100% !important;height:100% !important;object-fit:cover !important;display:block !important;border-radius:14px !important;margin:0 !important;padding:0 !important;background:#fff !important}',
-      'body a.ad-slot .ad-text,body .ad-slot .ad-text{display:flex !important;flex-direction:column !important;justify-content:center !important;flex:1 1 auto !important;min-width:0 !important;margin:0 !important;padding:0 !important}',
+      'body a.ad-slot.has-profile .ad-text,body .ad-slot.has-profile .ad-text{display:flex !important;flex-direction:column !important;justify-content:center !important;flex:1 1 auto !important;min-width:0 !important;margin:0 !important;padding:0 !important}',
+      'body a.ad-slot.has-profile .ad-cta,body .ad-slot.has-profile .ad-cta{align-self:flex-start !important;margin:0 !important}',
       'body a.ad-slot.kakao-channel .ad-logo-box,body .ad-slot[data-ad-type="kakao-channel"] .ad-logo-box{box-shadow:0 3px 8px rgba(60,30,30,.25) !important}',
       // 모바일
-      '@media (max-width:640px){body a.ad-slot.has-profile .ad-inner{gap:12px !important}body a.ad-slot .ad-logo-box,body .ad-slot .ad-logo-box{width:62px !important;height:62px !important;border-radius:12px !important}}'
+      '@media (max-width:640px){body a.ad-slot.has-profile .ad-inner{gap:10px !important}body a.ad-slot.has-profile .ad-top-row{gap:12px !important}body a.ad-slot .ad-logo-box,body .ad-slot .ad-logo-box{width:62px !important;height:62px !important;border-radius:12px !important}}'
     ].join('');
     var s = document.createElement('style');
     s.id = KAKAO_STYLE_ID;
@@ -125,7 +127,7 @@
           channel_name: '주정차단속알리미',
           title: '주정차단속알리미 바로가기',
           subtitle: '주정차단속 10분 전 문자 알림 · 완전 무료',
-          cta: '지금 등록',
+          cta: '채널 바로가기',
           url: 'https://pf.kakao.com/_CEtCX/friend',
           image: 'images/kakao-channel-bg-wide.png',
           profile_image: 'images/kakao-profile-parking-alert.png'
@@ -180,19 +182,30 @@
     }
     html += '<div class="ad-inner">';
     if (hasProfile) {
-      html += '<div class="ad-logo-box">'
+      // 상단 행: [로고박스] + [텍스트 블록(라벨·제목·서브)]
+      html += '<div class="ad-top-row">'
+        + '<div class="ad-logo-box">'
         + '<img class="ad-profile-img" src="' + esc(profileUrl) + '"'
         + (channelName ? ' alt="' + channelName + '"' : ' alt=""')
         + ' loading="lazy"'
-        + ' onerror="this.parentElement.parentElement.parentElement.classList.remove(\'has-profile\'); this.parentElement.remove();">'
+        + ' onerror="this.parentElement.parentElement.parentElement.parentElement.classList.remove(\'has-profile\'); this.parentElement.remove();">'
+        + '</div>'
+        + '<div class="ad-text">'
+        + '<span class="ad-label">' + esc(labelFor(ad)) + '</span>'
+        + '<div class="ad-title">' + title + '</div>'
+        + (subtitle ? '<div class="ad-subtitle">' + subtitle + '</div>' : '')
+        + '</div>'
+        + '</div>';
+      // 하단 독립 CTA (로고 침범 없음)
+      html += '<span class="ad-cta">' + cta + '</span>';
+    } else {
+      html += '<div class="ad-text">'
+        + '<span class="ad-label">' + esc(labelFor(ad)) + '</span>'
+        + '<div class="ad-title">' + title + '</div>'
+        + (subtitle ? '<div class="ad-subtitle">' + subtitle + '</div>' : '')
+        + '<span class="ad-cta">' + cta + '</span>'
         + '</div>';
     }
-    html += '<div class="ad-text">'
-      + '<span class="ad-label">' + esc(labelFor(ad)) + '</span>'
-      + '<div class="ad-title">' + title + '</div>'
-      + (subtitle ? '<div class="ad-subtitle">' + subtitle + '</div>' : '')
-      + '<span class="ad-cta">' + cta + '</span>'
-      + '</div>';
     html += '</div>';
 
     anchor.innerHTML = html;
