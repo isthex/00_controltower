@@ -107,14 +107,37 @@
 
   function render(el, ad) {
     if (!ad) {
-      // fetch 실패 fallback: 현 사이트 자체 CTA
-      el.innerHTML = '<div class="ad-inner">'
-        + '<span class="ad-label">AD</span>'
-        + '<div class="ad-title">앱in토스 · 일상 도구 모음</div>'
-        + '<div class="ad-subtitle">계산기·운세·공공정보 50+</div>'
-        + '<span class="ad-cta">둘러보기</span>'
-        + '</div>';
-      return;
+      // fetch 실패 / 풀 고갈 fallback — 슬롯 타입별 실제 배너로 대체
+      var slotType = (el.getAttribute('data-ad-type') || '').trim();
+      if (slotType === 'kakao-channel') {
+        ad = {
+          id: 'fallback-kakao-parking-alert',
+          type: 'kakao-channel',
+          title: '과태료 10만원, 피하는 법 있다',
+          subtitle: '주정차단속 10분 전 문자 알림 · 완전 무료',
+          cta: '지금 등록',
+          url: 'https://pf.kakao.com/_CEtCX/friend',
+          image: 'images/kakao-channel-bg-wide.png'
+        };
+      } else {
+        ad = {
+          id: 'fallback-my-pension',
+          type: 'project',
+          title: '내 국민연금 예상수령액',
+          subtitle: '가입기간·월소득 입력 1분 계산',
+          cta: '계산하기',
+          url: 'https://mypension.8949ok.kr/',
+          image: 'images/banner-my-pension.png'
+        };
+      }
+      // fallback 도 자기 호스트면 렌더 생략 (자기 사이트 광고 방지)
+      try {
+        if (new URL(ad.url).host === currentHost()) {
+          el.style.display = 'none';
+          return;
+        }
+      } catch (e) {}
+      // 이후 아래 정상 렌더 로직 그대로 이어짐
     }
 
     var hasImg = ad.image && String(ad.image).length > 0;
