@@ -98,12 +98,13 @@
       '.ad-slot.kakao-channel .ad-label,.ad-slot[data-ad-type="kakao-channel"] .ad-label{background:#3C1E1E !important;color:#FEE500 !important;font-weight:700 !important;letter-spacing:.3px !important}',
       '.ad-slot.kakao-channel .ad-cta,.ad-slot[data-ad-type="kakao-channel"] .ad-cta{background:#3C1E1E !important;color:#FEE500 !important;border:1px solid transparent !important}',
       '.ad-slot.kakao-channel .ad-cta:hover,.ad-slot[data-ad-type="kakao-channel"] .ad-cta:hover{background:#1f100f !important;color:#FEE500 !important}',
-      // 프로필 (채널 아이콘 + 채널명) — 카톡 톡방 상단 느낌
-      '.ad-slot .ad-profile{display:flex !important;align-items:center !important;gap:8px !important;margin:0 0 6px !important}',
-      '.ad-slot .ad-profile-img{width:36px !important;height:36px !important;border-radius:50% !important;object-fit:cover !important;background:#fff !important;box-shadow:0 1px 3px rgba(0,0,0,.12) !important;flex-shrink:0 !important}',
-      '.ad-slot .ad-profile-name{font-size:12px !important;font-weight:600 !important;letter-spacing:-.2px !important;color:inherit !important;opacity:.85 !important;line-height:1.2 !important}',
-      '.ad-slot.kakao-channel .ad-profile-img,.ad-slot[data-ad-type="kakao-channel"] .ad-profile-img{box-shadow:0 1px 4px rgba(60,30,30,.2) !important}',
-      '.ad-slot.kakao-channel .ad-profile-name,.ad-slot[data-ad-type="kakao-channel"] .ad-profile-name{color:#3C1E1E !important;opacity:.9 !important}'
+      // has-profile 레이아웃 — 프로필을 세로 중앙 왼쪽에 크게, 오른쪽에 텍스트 블록 (카톡 카드 느낌)
+      '.ad-slot.has-profile .ad-inner{flex-direction:row !important;align-items:center !important;gap:16px !important}',
+      '.ad-slot .ad-profile-img{width:64px !important;height:64px !important;border-radius:50% !important;object-fit:cover !important;background:#fff !important;flex-shrink:0 !important;box-shadow:0 2px 8px rgba(0,0,0,.15) !important}',
+      '.ad-slot .ad-text{display:flex !important;flex-direction:column !important;justify-content:center !important;min-width:0 !important;flex:1 !important}',
+      '.ad-slot.kakao-channel .ad-profile-img,.ad-slot[data-ad-type="kakao-channel"] .ad-profile-img{box-shadow:0 2px 6px rgba(60,30,30,.22) !important;background:#fff !important}',
+      // 모바일에선 프로필 조금 줄이기
+      '@media (max-width:640px){.ad-slot.has-profile .ad-inner{gap:12px !important}.ad-slot .ad-profile-img{width:48px !important;height:48px !important}}'
     ].join('');
     var s = document.createElement('style');
     s.id = KAKAO_STYLE_ID;
@@ -177,19 +178,18 @@
     }
     html += '<div class="ad-inner">';
     if (hasProfile) {
-      html += '<div class="ad-profile">'
-        + '<img class="ad-profile-img" src="' + esc(profileUrl) + '" alt="" loading="lazy"'
-        + ' onerror="this.parentElement.remove(); ">';
-      if (channelName) {
-        html += '<span class="ad-profile-name">' + channelName + '</span>';
-      }
-      html += '</div>';
+      html += '<img class="ad-profile-img" src="' + esc(profileUrl) + '"'
+        + (channelName ? ' alt="' + channelName + '"' : ' alt=""')
+        + ' loading="lazy"'
+        + ' onerror="this.remove(); this.parentElement.parentElement.classList.remove(\'has-profile\');">';
     }
-    html += '<span class="ad-label">' + esc(labelFor(ad)) + '</span>'
+    html += '<div class="ad-text">'
+      + '<span class="ad-label">' + esc(labelFor(ad)) + '</span>'
       + '<div class="ad-title">' + title + '</div>'
       + (subtitle ? '<div class="ad-subtitle">' + subtitle + '</div>' : '')
       + '<span class="ad-cta">' + cta + '</span>'
       + '</div>';
+    html += '</div>';
 
     anchor.innerHTML = html;
     if (el.parentElement) el.parentElement.replaceChild(anchor, el);
