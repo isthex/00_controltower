@@ -98,14 +98,15 @@
       '.ad-slot.kakao-channel .ad-label,.ad-slot[data-ad-type="kakao-channel"] .ad-label{background:#3C1E1E !important;color:#FEE500 !important;font-weight:700 !important;letter-spacing:.3px !important}',
       '.ad-slot.kakao-channel .ad-cta,.ad-slot[data-ad-type="kakao-channel"] .ad-cta{background:#3C1E1E !important;color:#FEE500 !important;border:1px solid transparent !important}',
       '.ad-slot.kakao-channel .ad-cta:hover,.ad-slot[data-ad-type="kakao-channel"] .ad-cta:hover{background:#1f100f !important;color:#FEE500 !important}',
-      // has-profile 레이아웃 — 프로필을 세로 중앙 왼쪽에 크게, 오른쪽에 텍스트 블록 (카톡 채널 리스트 느낌)
-      // specificity 강화: body 접두사 + a 태그 + .ad-slot + .has-profile + .ad-inner = 테마·플러그인 오버라이드 방지
-      'body .ad-slot.has-profile .ad-inner,body a.ad-slot.has-profile .ad-inner{flex-direction:row !important;align-items:center !important;gap:20px !important;justify-content:flex-start !important}',
-      'body .ad-slot .ad-profile-img,body a.ad-slot .ad-profile-img{width:84px !important;height:84px !important;border-radius:50% !important;object-fit:cover !important;background:#fff !important;flex-shrink:0 !important;box-shadow:0 3px 10px rgba(0,0,0,.18) !important;margin:0 !important;padding:0 !important}',
-      'body .ad-slot .ad-text,body a.ad-slot .ad-text{display:flex !important;flex-direction:column !important;justify-content:center !important;min-width:0 !important;flex:1 !important;margin:0 !important;padding:0 !important}',
+      // has-profile 레이아웃 — "보이지 않는 로고박스" 방식
+      // .ad-inner 에 왼쪽 padding 으로 프로필용 공간 확보 (글씨 시작점 강제 우측 이동)
+      // 프로필은 absolute 로 그 공간에 세로 중앙 배치 → 기존 flex-column 레이아웃 건드리지 않음
+      'body .ad-slot.has-profile .ad-inner,body a.ad-slot.has-profile .ad-inner{padding-left:114px !important}',
+      'body .ad-slot .ad-profile-img,body a.ad-slot .ad-profile-img{position:absolute !important;left:22px !important;top:50% !important;transform:translateY(-50%) !important;width:84px !important;height:84px !important;border-radius:50% !important;object-fit:cover !important;background:#fff !important;box-shadow:0 3px 10px rgba(0,0,0,.18) !important;margin:0 !important;padding:0 !important;z-index:2 !important}',
+      'body .ad-slot .ad-text,body a.ad-slot .ad-text{display:flex !important;flex-direction:column !important;justify-content:center !important;margin:0 !important;padding:0 !important}',
       'body .ad-slot.kakao-channel .ad-profile-img,body .ad-slot[data-ad-type="kakao-channel"] .ad-profile-img{box-shadow:0 3px 8px rgba(60,30,30,.25) !important;background:#fff !important}',
       // 모바일
-      '@media (max-width:640px){body .ad-slot.has-profile .ad-inner{gap:14px !important}body .ad-slot .ad-profile-img{width:62px !important;height:62px !important}}'
+      '@media (max-width:640px){body .ad-slot.has-profile .ad-inner{padding-left:84px !important}body .ad-slot .ad-profile-img{width:62px !important;height:62px !important;left:14px !important}}'
     ].join('');
     var s = document.createElement('style');
     s.id = KAKAO_STYLE_ID;
