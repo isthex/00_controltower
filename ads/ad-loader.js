@@ -97,18 +97,7 @@
       '.ad-slot.kakao-channel .ad-subtitle,.ad-slot[data-ad-type="kakao-channel"] .ad-subtitle{color:rgba(60,30,30,.82) !important;opacity:1 !important}',
       '.ad-slot.kakao-channel .ad-label,.ad-slot[data-ad-type="kakao-channel"] .ad-label{background:#3C1E1E !important;color:#FEE500 !important;font-weight:700 !important;letter-spacing:.3px !important}',
       '.ad-slot.kakao-channel .ad-cta,.ad-slot[data-ad-type="kakao-channel"] .ad-cta{background:#3C1E1E !important;color:#FEE500 !important;border:1px solid transparent !important}',
-      '.ad-slot.kakao-channel .ad-cta:hover,.ad-slot[data-ad-type="kakao-channel"] .ad-cta:hover{background:#1f100f !important;color:#FEE500 !important}',
-      // has-profile 레이아웃 — 상단 [로고박스+텍스트 row] + 하단 [독립 CTA] (로고 침범 없음)
-      // .ad-inner 자체는 column 유지 (WFM 플러그인 호환), 내부 .ad-top-row 가 row
-      'body a.ad-slot.has-profile .ad-inner,body .ad-slot.has-profile[data-ad-type] .ad-inner{flex-direction:column !important;align-items:flex-start !important;justify-content:center !important;gap:10px !important;padding-top:18px !important;padding-bottom:18px !important}',
-      'body a.ad-slot.has-profile .ad-top-row,body .ad-slot.has-profile .ad-top-row{display:flex !important;flex-direction:row !important;align-items:center !important;gap:16px !important;width:100% !important;margin:0 !important;padding:0 !important}',
-      'body a.ad-slot .ad-logo-box,body .ad-slot .ad-logo-box{width:52px !important;height:52px !important;flex-shrink:0 !important;border-radius:11px !important;overflow:hidden !important;background:transparent !important;box-shadow:0 2px 8px rgba(0,0,0,.15) !important;display:block !important;padding:0 !important;margin:0 !important;position:relative !important;z-index:2 !important}',
-      'body a.ad-slot .ad-profile-img,body .ad-slot .ad-profile-img{width:100% !important;height:100% !important;object-fit:cover !important;display:block !important;border-radius:11px !important;margin:0 !important;padding:0 !important;background:#fff !important}',
-      'body a.ad-slot.has-profile .ad-text,body .ad-slot.has-profile .ad-text{display:flex !important;flex-direction:column !important;justify-content:center !important;flex:1 1 auto !important;min-width:0 !important;margin:0 !important;padding:0 !important}',
-      'body a.ad-slot.has-profile .ad-cta,body .ad-slot.has-profile .ad-cta{align-self:flex-start !important;margin:0 0 0 68px !important}',
-      'body a.ad-slot.kakao-channel .ad-logo-box,body .ad-slot[data-ad-type="kakao-channel"] .ad-logo-box{box-shadow:0 3px 8px rgba(60,30,30,.25) !important}',
-      // 모바일
-      '@media (max-width:640px){body a.ad-slot.has-profile .ad-inner{gap:8px !important;padding-top:14px !important;padding-bottom:14px !important}body a.ad-slot.has-profile .ad-top-row{gap:12px !important}body a.ad-slot.has-profile .ad-cta{margin-left:54px !important}body a.ad-slot .ad-logo-box,body .ad-slot .ad-logo-box{width:42px !important;height:42px !important;border-radius:9px !important}}'
+      '.ad-slot.kakao-channel .ad-cta:hover,.ad-slot[data-ad-type="kakao-channel"] .ad-cta:hover{background:#1f100f !important;color:#FEE500 !important}'
     ].join('');
     var s = document.createElement('style');
     s.id = KAKAO_STYLE_ID;
@@ -124,13 +113,11 @@
         ad = {
           id: 'fallback-kakao-parking-alert',
           type: 'kakao-channel',
-          channel_name: '주정차단속알리미',
           title: '주정차단속알리미 바로가기',
           subtitle: '주정차단속 10분 전 문자 알림 · 완전 무료',
           cta: '채널 바로가기',
           url: 'https://pf.kakao.com/_CEtCX/friend',
-          image: 'images/kakao-channel-bg-wide.png',
-          profile_image: 'images/kakao-profile-parking-alert.png'
+          image: 'images/kakao-channel-bg-wide.png'
         };
       } else {
         ad = {
@@ -161,15 +148,11 @@
     var url = ad.url || '#';
     var typeClass = ad.type === 'kakao-channel' ? ' kakao-channel' : '';
 
-    var hasProfile = ad.profile_image && String(ad.profile_image).length > 0;
-    var profileUrl = hasProfile ? resolveImage(ad.profile_image) : '';
-    var channelName = esc(ad.channel_name || '');
-
     var anchor = document.createElement('a');
     anchor.href = url;
     anchor.target = '_blank';
     anchor.rel = 'sponsored noopener';
-    anchor.className = el.className + (hasImg ? ' has-image' : '') + (hasProfile ? ' has-profile' : '') + typeClass;
+    anchor.className = el.className + (hasImg ? ' has-image' : '') + typeClass;
     anchor.setAttribute('aria-label', title);
     anchor.setAttribute('data-slot', el.getAttribute('data-slot') || '');
     anchor.setAttribute('data-ad-id', ad.id || '');
@@ -180,33 +163,12 @@
       html += '<img class="ad-bg" src="' + esc(imgUrl) + '" alt="" loading="lazy"'
         + ' onerror="this.remove(); this.parentElement.classList.remove(\'has-image\');">';
     }
-    html += '<div class="ad-inner">';
-    if (hasProfile) {
-      // 상단 행: [로고박스] + [텍스트 블록(라벨·제목·서브)]
-      html += '<div class="ad-top-row">'
-        + '<div class="ad-logo-box">'
-        + '<img class="ad-profile-img" src="' + esc(profileUrl) + '"'
-        + (channelName ? ' alt="' + channelName + '"' : ' alt=""')
-        + ' loading="lazy"'
-        + ' onerror="this.parentElement.parentElement.parentElement.parentElement.classList.remove(\'has-profile\'); this.parentElement.remove();">'
-        + '</div>'
-        + '<div class="ad-text">'
-        + '<span class="ad-label">' + esc(labelFor(ad)) + '</span>'
-        + '<div class="ad-title">' + title + '</div>'
-        + (subtitle ? '<div class="ad-subtitle">' + subtitle + '</div>' : '')
-        + '</div>'
-        + '</div>';
-      // 하단 독립 CTA (로고 침범 없음)
-      html += '<span class="ad-cta">' + cta + '</span>';
-    } else {
-      html += '<div class="ad-text">'
-        + '<span class="ad-label">' + esc(labelFor(ad)) + '</span>'
-        + '<div class="ad-title">' + title + '</div>'
-        + (subtitle ? '<div class="ad-subtitle">' + subtitle + '</div>' : '')
-        + '<span class="ad-cta">' + cta + '</span>'
-        + '</div>';
-    }
-    html += '</div>';
+    html += '<div class="ad-inner">'
+      + '<span class="ad-label">' + esc(labelFor(ad)) + '</span>'
+      + '<div class="ad-title">' + title + '</div>'
+      + (subtitle ? '<div class="ad-subtitle">' + subtitle + '</div>' : '')
+      + '<span class="ad-cta">' + cta + '</span>'
+      + '</div>';
 
     anchor.innerHTML = html;
     if (el.parentElement) el.parentElement.replaceChild(anchor, el);
