@@ -449,14 +449,14 @@
     {
       "id": "size",
       "type": "project",
-      "title": "해외 사이즈 한눈에",
-      "subtitle": "신발·의류 국가별 비교",
+      "title": "사이즈 변환 9종",
+      "subtitle": "반지·신발·의류·속옷 비교",
       "cta": "변환",
       "url": "https://sizeconvert.o2u.kr/",
       "image": "images/banner-size.png",
       "tags": [
         "도구",
-        "해외"
+        "쇼핑"
       ],
       "weight": 1,
       "active": true
