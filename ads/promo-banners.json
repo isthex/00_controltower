@@ -785,6 +785,21 @@
       ],
       "weight": 1,
       "active": true
+    },
+    {
+      "id": "checkup",
+      "type": "project",
+      "title": "올해 건강검진 대상?",
+      "subtitle": "출생연도로 30초 무료 조회",
+      "cta": "조회",
+      "url": "https://checkup.o2u.kr/",
+      "image": null,
+      "tags": [
+        "건강",
+        "의료"
+      ],
+      "weight": 1,
+      "active": true
     }
   ]
 }
