@@ -1,6 +1,6 @@
 {
-  "version": 7,
-  "updated_at": "2026-04-24",
+  "version": 8,
+  "updated_at": "2026-04-25",
   "_notes": "앱in토스 전 사이트 공통 프로모션 배너 풀. ad-loader.js 가 페이지마다 weighted random 으로 1개씩 렌더. 새 사이트 출시 시 이 파일에만 추가하면 전 사이트 자동 반영.\n- type=\"kakao-channel\": 카카오톡 채널 친구추가 (노랑 배경, 슬롯 `data-ad-type=\"kakao-channel\"` 전용 풀)\n- type=\"project\" 또는 미지정: 프로젝트 사이트 배너 (일반 슬롯 기본 풀)\n- weight 높을수록 자주 노출, active=false 면 로테이션 제외",
   "banners": [
     {
@@ -797,6 +797,22 @@
       "tags": [
         "건강",
         "의료"
+      ],
+      "weight": 1,
+      "active": true
+    },
+    {
+      "id": "imhero",
+      "type": "project",
+      "title": "임영웅 소식 한눈에",
+      "subtitle": "콘서트·신곡·방송 일정 매일 자동 갱신",
+      "cta": "보기",
+      "url": "https://imhero.o2u.kr/",
+      "image": null,
+      "tags": [
+        "연예",
+        "팬덤",
+        "엔터테인먼트"
       ],
       "weight": 1,
       "active": true
