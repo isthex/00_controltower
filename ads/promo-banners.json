@@ -1,5 +1,5 @@
 {
-  "version": 8,
+  "version": 9,
   "updated_at": "2026-04-25",
   "_notes": "앱in토스 전 사이트 공통 프로모션 배너 풀. ad-loader.js 가 페이지마다 weighted random 으로 1개씩 렌더. 새 사이트 출시 시 이 파일에만 추가하면 전 사이트 자동 반영.\n- type=\"kakao-channel\": 카카오톡 채널 친구추가 (노랑 배경, 슬롯 `data-ad-type=\"kakao-channel\"` 전용 풀)\n- type=\"project\" 또는 미지정: 프로젝트 사이트 배너 (일반 슬롯 기본 풀)\n- weight 높을수록 자주 노출, active=false 면 로테이션 제외",
   "banners": [
@@ -812,6 +812,22 @@
       "tags": [
         "연예",
         "팬덤",
+        "엔터테인먼트"
+      ],
+      "weight": 1,
+      "active": true
+    },
+    {
+      "id": "trot-concert",
+      "type": "project",
+      "title": "트로트 콘서트 D-Day 알림",
+      "subtitle": "즐겨찾는 가수 등록 · KOPIS 자동 갱신",
+      "cta": "알림 설정",
+      "url": "https://trot.ryunadb.kr/",
+      "image": null,
+      "tags": [
+        "연예",
+        "콘서트",
         "엔터테인먼트"
       ],
       "weight": 1,
