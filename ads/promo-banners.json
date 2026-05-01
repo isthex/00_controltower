@@ -1,5 +1,5 @@
 {
-  "version": 12,
+  "version": 13,
   "updated_at": "2026-05-01",
   "_notes": "앱in토스 전 사이트 공통 프로모션 배너 풀. ad-loader.js 가 페이지마다 weighted random 으로 1개씩 렌더. 새 사이트 출시 시 이 파일에만 추가하면 전 사이트 자동 반영.\n- type=\"kakao-channel\": 카카오톡 채널 친구추가 (노랑 배경, 슬롯 `data-ad-type=\"kakao-channel\"` 전용 풀)\n- type=\"project\" 또는 미지정: 프로젝트 사이트 배너 (일반 슬롯 기본 풀)\n- weight 높을수록 자주 노출, active=false 면 로테이션 제외",
   "banners": [
@@ -538,6 +538,22 @@
         "자동차",
         "세무",
         "계산기"
+      ],
+      "weight": 1,
+      "active": true
+    },
+    {
+      "id": "hipass",
+      "type": "project",
+      "title": "하이패스 톨게이트 50% 할인",
+      "subtitle": "다둥이·전기차·심야·출퇴근 자가진단",
+      "cta": "진단",
+      "url": "https://hipass.wedclub.kr/",
+      "image": "images/banner-hipass.png",
+      "tags": [
+        "자동차",
+        "운전자",
+        "할인"
       ],
       "weight": 1,
       "active": true
