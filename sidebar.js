@@ -66,13 +66,6 @@ const allProjects = {
         categories: ['재무계산', '투자'],
         keywords: ['복리계산', '복리계산기', '스노우볼복리', '복리시뮬레이터', '복리효과', '주식복리', '코인복리', '복리재테크', '복리자산증식', '복리투자계산']
     },
-    '10_bitcoin-futures-calculator': {
-        name: '비트코인 선물 진입수량 계산기',
-        url: 'https://btccalculator.seosann.kr/',
-        desc: '리스크 관리 필수 도구',
-        categories: ['투자', '암호화폐'],
-        keywords: ['비트코인', '선물거래', '진입수량', '리스크관리', '레버리지', '암호화폐', '선물계산', '포지션관리', '투자도구']
-    },
     '11_national-pension-calculator': {
         name: '국민연금 예상수령액 계산기',
         url: 'https://mypension.8949ok.kr/',
