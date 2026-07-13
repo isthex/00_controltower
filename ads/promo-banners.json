@@ -55,7 +55,7 @@
     {
       "id": "kakao-checkup",
       "type": "kakao-channel",
-      "title": "건강검진 대상자 자동 알림",
+      "title": "건강검진 대상자 알리미",
       "subtitle": "올해 내 검진 대상 + 시기 임박 D-알림",
       "cta": "채널 바로가기",
       "url": "https://pf.kakao.com/_LxnpjX/friend",
