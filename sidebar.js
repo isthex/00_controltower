@@ -423,6 +423,13 @@ const allProjects = {
         categories: ['세금', '생활정보'],
         keywords: ['증여세계산기', '상속세계산기', '증여세세율', '증여세공제', '증여재산공제', '증여세면제한도', '자녀증여세', '배우자증여세', '혼인증여공제', '상속세세율', '상속세공제', '증여세얼마']
     },
+    'credit-score-info': {
+        name: '신용점수 정보',
+        url: 'https://creditscore.oreurak.kr/',
+        desc: 'KCB·NICE 신용점수 등급표·구간별 우량 기준·올리는 법·무료조회',
+        categories: ['금융', '생활정보'],
+        keywords: ['신용점수표', '신용점수등급표', 'KCB신용점수', 'NICE신용점수', '신용점수올리기', '신용점수조회', '신용점수무료조회', '신용점수구간', 'KCBNICE신용점수차이', '신용점수900점', '신용점수800점', '신용점수평균']
+    },
     'parental-leave-pay': {
         name: '육아휴직 급여 계산기',
         url: 'https://parental.oreurak.kr/',
