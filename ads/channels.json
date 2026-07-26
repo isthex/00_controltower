@@ -4,10 +4,10 @@
   "channels": [
     {
       "slug": "my-pension",
-      "name": "내연금얼마지",
+      "name": "노후준비 연금전략 알리미",
       "platform": "kakao_channel",
-      "url": "https://pf.kakao.com/_aexlCX",
-      "description": "국민연금 수령액·예상치 무료 계산",
+      "url": "https://pf.kakao.com/_xeFPxnX/friend",
+      "description": "국민·퇴직·개인·주택연금으로 만드는 평생 월급 전략",
       "banner_wide":   "이미지/channel-my-pension-wide.png",
       "banner_square": "이미지/channel-my-pension-square.png",
       "weight": 1,

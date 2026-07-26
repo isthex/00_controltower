@@ -38,10 +38,10 @@
     {
       "id": "kakao-mypension-channel",
       "type": "kakao-channel",
-      "title": "내연금얼마지 채널 친구추가",
-      "subtitle": "국민연금 예상수령액·노후 정보 매주 카톡",
+      "title": "노후준비 연금전략 알리미 채널 친구추가",
+      "subtitle": "국민·퇴직·개인·주택연금으로 만드는 평생 월급 전략",
       "cta": "채널 바로가기",
-      "url": "https://pf.kakao.com/_EKRes/friend",
+      "url": "https://pf.kakao.com/_xeFPxnX/friend",
       "image": "images/kakao-channel-bg-wide.png",
       "tags": [
         "카카오채널",
