@@ -1,6 +1,6 @@
 {
-  "version": 17,
-  "updated_at": "2026-05-01",
+  "version": 18,
+  "updated_at": "2026-07-26",
   "_notes": "앱in토스 전 사이트 공통 프로모션 배너 풀. ad-loader.js 가 페이지마다 weighted random 으로 1개씩 렌더. 새 사이트 출시 시 이 파일에만 추가하면 전 사이트 자동 반영.\n- type=\"kakao-channel\": 카카오톡 채널 친구추가 (노랑 배경, 슬롯 `data-ad-type=\"kakao-channel\"` 전용 풀)\n- type=\"project\" 또는 미지정: 프로젝트 사이트 배너 (일반 슬롯 기본 풀)\n- weight 높을수록 자주 노출, active=false 면 로테이션 제외",
   "banners": [
     {
@@ -22,23 +22,7 @@
     {
       "id": "kakao-my-pension",
       "type": "kakao-channel",
-      "title": "내 연금 얼마 받지? 1분 확인",
-      "subtitle": "국민연금 예상액 + 건보료 환급 꿀팁 매주",
-      "cta": "채널 바로가기",
-      "url": "https://pf.kakao.com/_aexlCX/friend",
-      "image": "images/kakao-channel-bg-wide.png",
-      "tags": [
-        "카카오채널",
-        "금융",
-        "연금"
-      ],
-      "weight": 1,
-      "active": true
-    },
-    {
-      "id": "kakao-mypension-channel",
-      "type": "kakao-channel",
-      "title": "노후준비 연금전략 알리미 채널 친구추가",
+      "title": "노후준비 연금전략 알리미",
       "subtitle": "국민·퇴직·개인·주택연금으로 만드는 평생 월급 전략",
       "cta": "채널 바로가기",
       "url": "https://pf.kakao.com/_xeFPxnX/friend",
