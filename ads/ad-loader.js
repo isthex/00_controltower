@@ -12,6 +12,7 @@
  * 슬롯 예시:
  *   <!-- 상단: 카카오채널 -->
  *   <div class="ad-slot banner-wide" data-slot="kakao_top" data-ad-type="kakao-channel"></div>
+ *   특정 배너 고정: data-ad-id="kakao-saved-money" (promo-banners.json 의 id)
  *
  *   <!-- 하단: 프로젝트 배너 -->
  *   <div class="ad-slot banner-wide" data-slot="project_bottom"></div>
@@ -206,6 +207,17 @@
       var remainingByType = {};
 
       slots.forEach(function (el) {
+        // data-ad-id 가 있으면 그 배너로 고정한다 (랜덤 대신 특정 채널만 띄우고 싶을 때).
+        // 같은 호스트 제외 필터를 타지 않도록 원본 banners 에서 찾는다.
+        var wantId = (el.getAttribute('data-ad-id') || '').trim();
+        if (wantId) {
+          var fixed = null;
+          for (var i = 0; i < banners.length; i++) {
+            if (banners[i].id === wantId) { fixed = banners[i]; break; }
+          }
+          if (fixed) { render(el, fixed); return; }
+          // 없는 id 면 조용히 평소대로 랜덤으로 넘어간다
+        }
         var typeKey = (el.getAttribute('data-ad-type') || 'project').trim() || 'project';
         if (!remainingByType[typeKey]) {
           remainingByType[typeKey] = poolForSlot(el, base).slice();
