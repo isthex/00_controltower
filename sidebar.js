@@ -228,11 +228,11 @@ const allProjects = {
         keywords: ['eSIM', 'eSIM 호환 기기', 'eSIM 지원 기기', '아이폰 eSIM', '갤럭시 eSIM', 'eSIM 로밍 비교', 'eSIM 요금 비교', '해외여행 eSIM', 'eSIM 절약', '로밍 vs eSIM', 'eSIM 설정', '일본 eSIM', '미국 eSIM', '유럽 eSIM', 'iPhone 15 eSIM', 'Galaxy S24 eSIM', 'eSIM 7일', 'eSIM 무제한', 'Airalo', 'Holafly', 'Nomad', 'eSIM 가격', 'eSIM 추천', '여행 데이터', 'eSIM 구매']
     },
     '33_national-scholarship-checker': {
-        name: '2026 국가장학금 자격 판독기',
+        name: '국가장학금 계산기 2026',
         url: 'https://scholarship.ledgolf.kr/',
-        desc: '5초 자격 확인 + 예상 지원금액 계산',
+        desc: '학자금지원구간·지원금액·2027 가~마 개편 바로 확인',
         categories: ['재무계산', '복지정보', '교육'],
-        keywords: ['국가장학금', '장학금자격', '소득분위', '장학금계산기', '2026장학금', 'I유형', 'II유형', '다자녀장학금', '9구간', '학자금지원', '대학생장학금', '한국장학재단', '소득인정액', '장학금신청']
+        keywords: ['국가장학금', '장학금자격', '소득분위', '장학금계산기', '2026장학금', 'I유형', 'II유형', '다자녀장학금', '9구간', '학자금지원', '대학생장학금', '한국장학재단', '소득인정액', '장학금신청', '학자금지원구간', '국가장학금신청기간', '국가근로장학금', '주거안정장학금', '2027학자금지원구간']
     },
     '34_savings-deposit-calculator': {
         name: '적금·예금 계산기',
