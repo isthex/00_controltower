@@ -39,11 +39,11 @@ const allProjects = {
         keywords: ['축의금', '결혼축의금', '경조사비', '축의금계산', '결혼식', '부조금', '축하금', '경조사']
     },
     '06_retirement-dc-db': {
-        name: '퇴직연금 DC/DB 유불리 계산기',
-        url: 'https://dcdb.ryunadb.kr',
-        desc: '내 퇴직금, 어떤 게 유리할까?',
+        name: '퇴직연금 DC·DB 비교 계산기 2026',
+        url: 'https://dcdb.ryunadb.kr/',
+        desc: 'DC·DB 유불리·손익분기 수익률 · 중도인출 · IRP 이전 · 퇴직소득세 감면',
         categories: ['재무계산', '연금'],
-        keywords: ['퇴직연금', 'DC형퇴직금', 'DB형퇴직금', '퇴직금', '퇴직연금계산', 'DC유불리', '확정기여형', '확정급여형', '퇴직연금비교']
+        keywords: ['퇴직연금', 'DC형퇴직금', 'DB형퇴직금', '퇴직금계산법', '퇴직연금계산', 'DC유불리', '확정기여형', '확정급여형', 'DC중도인출', 'IRP이전', '퇴직소득세감면', '퇴직금중간정산', 'DB에서DC전환', '임금피크제퇴직금']
     },
     '07_us-stock-tax-calculator': {
         name: '해외주식 양도소득세 계산기',
