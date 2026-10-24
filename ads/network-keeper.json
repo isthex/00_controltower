@@ -1,5 +1,5 @@
 {
-  "_doc": "그물망 관리(ad-loader.js 3번째 블록) 설정. enabled=false 면 즉시 전체 꺼짐(코드 수정 불필요). 운영자 승인 범위(2026-10-24): 숨은돈 알리미 카톡 고정 블록 · 블로그 '함께 보면 좋은 계산기' · 블로그 관련 정보 박스(.smart-button-container)의 외부 링크를 우리 사이트로 교체 — 이 셋만 자동. 감시·기록: 앱in토스 tools/analytics-dashboard(그물망 관리).",
+  "_doc": "그물망 관리(ad-loader.js 3번째 블록) 설정. enabled=false 면 즉시 전체 꺼짐(코드 수정 불필요). 운영자 승인 범위(2026-10-24): 숨은돈 알리미 카톡 고정 블록 · 블로그 '함께 보면 좋은 계산기' · 블로그 관련 정보 박스(.smart-button-container) 안 링크를 전부(공공기관 포함, 10-24) 우리 사이트로 교체 — 이 셋만 자동. 감시·기록: 앱in토스 tools/analytics-dashboard(그물망 관리).",
   "version": 1,
   "enabled": true,
   "kko": {
@@ -20,7 +20,7 @@
   "rewrite": {
     "enabled": true,
     "selector": ".smart-button-container a[href]",
-    "keepHosts": ["(^|\\.)go\\.kr$", "(^|\\.)korea\\.kr$", "(^|\\.)nhis\\.or\\.kr$", "(^|\\.)nps\\.or\\.kr$", "(^|\\.)hometax\\.go\\.kr$", "(^|\\.)(khug|koroad|nia|kosaf|hf|kinfa|kdi|keis|kcomwel|hira|lh|kosmes|semas|kised|kca|kocca|kodit|kibo|kead|kosha|kamco|kdic|fss|kosis)\\.or\\.kr$", "(^|\\.)kepco\\.co\\.kr$", "(^|\\.)bok\\.or\\.kr$", "(^|\\.)kwater\\.or\\.kr$", "(^|\\.)korail\\.com$"],
+    "keepHosts": [],
     "fallback": [
       {
         "name": "숨은 환급금 1분 조회 — 숨은돈 알리미",
@@ -34,7 +34,8 @@
         "name": "잠자는 돈 찾기 10가지 — 조회 방법과 기한",
         "url": "https://refund.ledgolf.kr/guide/"
       }
-    ]
+    ],
+    "_doc": "keepHosts: 관련 정보 박스 안에서도 그대로 둘 호스트(정규식). 10-24 운영자: 박스 안은 공공기관 링크까지 전부 우리 사이트·숨은돈 알리미로 → 빈 목록. 본문 속 링크는 원래 안 건드림."
   },
   "blogHosts": ["love.ledgolf.kr", "home.8949ok.kr", "neo.8949ok.kr", "on.o2u.kr", "view.o2u.kr", "www.oldee.kr", "oldee.kr", "up.oldee.kr", "mm.ryunadb.kr", "top.ryunadb.kr", "blog.seosann.kr", "keep.seosann.kr", "pay.sickgirl.co.kr", "look.ssp2021.kr", "name.ssp2021.kr", "go.winevisionshop.kr", "people.winevisionshop.kr", "dal.ydpn.kr", "8949ok.kr", "itembook.co.kr", "ledgolf.kr", "o2u.kr", "on595.co.kr", "oreurak.kr", "call.oreurak.kr", "ryunadb.kr", "seosann.kr", "sickgirl.co.kr", "ssp2021.kr", "ttjc.co.kr", "wedclub.kr", "gibugi.kr", "winevisionshop.kr", "ydpn.kr", "wp-follow-me.kr"],
   "excludeHosts": [],

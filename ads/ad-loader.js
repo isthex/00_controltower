@@ -284,7 +284,7 @@
  *  ① 숨은돈 알리미 카톡 고정 블록(.kko-cta)이 없는 페이지 → 본문 끝(footer 앞)에 한 번 넣는다(랜덤 배너 슬롯은 고정 블록으로 치지 않음)
  *  ② 블로그 글 → 주제가 맞는 우리 계산기 1~4개 '함께 보면 좋은 계산기'(같은 탭, 현재 사이트 제외)
  *  ③ 블로그 '관련 정보' 박스(.smart-button-container) 안 외부 링크 → 주제 맞는 우리 사이트, 없으면 숨은돈 알리미
- *     (공식기관 *.go.kr 등 keepHosts 는 그대로. 본문 속 출처 링크는 손대지 않음)
+ *     (박스 안은 공공기관 링크까지 전부 — 10-24 운영자. 예외가 필요하면 설정 keepHosts. 본문 속 출처 링크는 손대지 않음)
  * 설정·끄기: ads/network-keeper.json (enabled=false 면 전부 꺼짐) · 시험: ?nk=off 끄기 / ?nk=debug 콘솔 기록
  * 건너뜀: 토스 웹뷰(?client=toss-app · .toss-app-mode) · privacy/terms · excludeHosts · 설정을 못 읽으면 아무것도 안 함
  * 바꾼 건 GA4 이벤트 network_keeper(nk_action) 로 남는다. 주제 판정은 auto-posting controltower.match_many 와 같은 방식
