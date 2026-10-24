@@ -329,13 +329,15 @@
     return out;
   }
 
-  // 주제 판정 — controltower.match_many 와 같은 점수(토막 단위). 이웃 토막을 붙인 말(꿈+해몽=꿈해몽)도 본다.
+  // 주제 판정 — controltower.match_many 와 같은 점수(토막 단위). 이웃 토막을 붙인 말(꿈+해몽=꿈해몽)은 '정확히 같을 때만' 친다.
+  // 두 글자 토막이 긴 키워드 속에 들어 있기만 한 건(소득⊂연금소득세) 약하게(1점), 짧은 말이 긴 키워드 귀퉁이에 걸린 건(신청방법⊂문화누리카드신청방법) 안 침
+  // — 우연한 겹침이 쌓여 엉뚱한 사이트가 붙는 걸 막는다.
   function rawTokens(t) { return String(t || '').toLowerCase().split(/[^0-9a-z가-힣]+/).filter(Boolean); }
   function tokens(t, stop, pairs) {
     var raw = rawTokens(t), set = {};
-    raw.forEach(function (x) { if (x.length >= 2 && !stop[x]) set[x] = 1; });
-    if (pairs) for (var i = 0; i + 1 < raw.length; i++) { var j = raw[i] + raw[i + 1]; if (j.length >= 3 && !stop[j] && !stop[raw[i]] && !stop[raw[i + 1]]) set[j] = 1; }
-    return Object.keys(set);
+    raw.forEach(function (x) { if (x.length >= 2 && !stop[x]) set[x] = 0; });
+    if (pairs) for (var i = 0; i + 1 < raw.length; i++) { var j = raw[i] + raw[i + 1]; if (j.length >= 3 && !stop[j] && !stop[raw[i]] && !stop[raw[i + 1]] && !(j in set)) set[j] = 1; }
+    return Object.keys(set).map(function (k) { return [k, set[k]]; });   // [토막, 이웃결합이면 1]
   }
   function lcs(a, b) {
     var p = new Array(b.length + 1).fill(0);
@@ -348,14 +350,14 @@
     if (!kt.length) return [];
     projects.forEach(function (p) {
       if (exclude[p.host]) return;
-      var pts = {}; p.keywords.concat([p.name]).forEach(function (k) { tokens(k, stop, false).forEach(function (x) { pts[x] = 1; }); });
+      var pts = {}; p.keywords.concat([p.name]).forEach(function (k) { tokens(k, stop, false).forEach(function (x) { pts[x[0]] = 1; }); });
       pts = Object.keys(pts);
       var total = 0, top = 0;
-      kt.forEach(function (t) {
-        var best = 0;
+      kt.forEach(function (tk) {
+        var t = tk[0], pair = tk[1], best = 0;
         pts.forEach(function (pt) {
           if (pt === t) best = Math.max(best, t.length * 2);
-          else if (t.indexOf(pt) >= 0 || pt.indexOf(t) >= 0) best = Math.max(best, Math.min(t.length, pt.length) + 1);
+          else if (!pair && (t.indexOf(pt) >= 0 || (pt.indexOf(t) >= 0 && t.length * 2 >= pt.length))) { var mn = Math.min(t.length, pt.length); best = Math.max(best, mn >= 3 ? mn + 1 : 1); }
           else if (t.length >= 4 && pt.length >= 4) { var r = 2 * lcs(t, pt) / (t.length + pt.length); if (r >= 0.8) best = Math.max(best, Math.floor(Math.min(t.length, pt.length) * r)); }
         });
         total += best; top = Math.max(top, best);
