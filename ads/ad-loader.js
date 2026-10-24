@@ -29,6 +29,45 @@
  * CSS: 각 사이트 css/style.css 에 `.ad-slot` · `.ad-slot.kakao-channel` 정의
  */
 
+/* ── 통계(2026-10-24) — 전 사이트 공통: 구글 애널리틱스 GA4 + 네이버 애널리틱스 ──────────────
+ * 사이트마다 head/footer 에 넣지 않고 이 로더 한 곳에서 붙인다(모든 사이트가 이 로더를 거치게 하는 게 목표).
+ * - 한 페이지에서 로더가 두 번 불려도 한 번만(window.__itxAnalytics)
+ * - 페이지에 이미 같은 GA ID 를 직접 넣은 경우는 건너뜀(이중 집계 방지)
+ * - localhost·127.0.0.1·file: 미리보기는 수집하지 않음
+ * 대시보드: tools/traffic-dashboard(GA4 Data API, 속성 G-5F1VQXMC1N) */
+(function () {
+  'use strict';
+  var GA_ID = 'G-5F1VQXMC1N';
+  var NAVER_WA = '1ba708d70b53fe0';
+  if (window.__itxAnalytics) return;
+  window.__itxAnalytics = true;
+  var h = location.hostname;
+  if (location.protocol === 'file:' || h === 'localhost' || h === '127.0.0.1' || h === '') return;
+  function load(src, onload) {
+    var s = document.createElement('script');
+    s.async = true; s.src = src;
+    if (onload) s.onload = onload;
+    (document.head || document.documentElement).appendChild(s);
+  }
+  try {
+    // 구글 애널리틱스(GA4)
+    var hasGa = document.querySelector('script[src*="googletagmanager.com/gtag/js?id=' + GA_ID + '"]');
+    if (!hasGa) {
+      window.dataLayer = window.dataLayer || [];
+      window.gtag = window.gtag || function () { window.dataLayer.push(arguments); };
+      window.gtag('js', new Date());
+      window.gtag('config', GA_ID);
+      load('https://www.googletagmanager.com/gtag/js?id=' + GA_ID);
+    }
+    // 네이버 애널리틱스
+    if (!document.querySelector('script[src*="wcs.pstatic.net/wcslog.js"]')) {
+      window.wcs_add = window.wcs_add || {};
+      window.wcs_add['wa'] = NAVER_WA;
+      load('https://wcs.pstatic.net/wcslog.js', function () { if (window.wcs) window.wcs_do(); });
+    }
+  } catch (e) { /* 통계 실패가 광고·화면을 막지 않게 */ }
+})();
+
 (function () {
   'use strict';
 
