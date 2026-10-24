@@ -1,0 +1,37 @@
+{
+  "_doc": "그물망 관리(ad-loader.js 3번째 블록) 설정. enabled=false 면 즉시 전체 꺼짐(코드 수정 불필요). 운영자 승인 범위(2026-10-24): 숨은돈 알리미 카톡 고정 블록 · 블로그 '함께 보면 좋은 계산기' · 블로그 관련 정보 박스(.smart-button-container)의 외부 링크를 우리 사이트로 교체 — 이 셋만 자동. 감시·기록: 앱in토스 tools/analytics-dashboard(그물망 관리).",
+  "version": 1,
+  "enabled": true,
+  "kko": {
+    "enabled": true,
+    "url": "https://pf.kakao.com/_tJpjX/friend",
+    "badge": "카카오톡 채널 · 숨은돈 알리미",
+    "head": "찾아갈 돈이 생기면 먼저 알려드려요",
+    "sub": "근로장려금 신청 기간 · 환급금 · 휴면예금 · 숨은 보험금까지. 신청 안 하면 사라지는 돈만 골라 카톡으로 알려드려요.",
+    "chips": ["무료", "1초면 추가", "언제든 차단"],
+    "btn": "채널 추가하고 알림 받기 →"
+  },
+  "related": {
+    "enabled": true,
+    "title": "함께 보면 좋은 계산기",
+    "max": 4,
+    "min": 1
+  },
+  "rewrite": {
+    "enabled": true,
+    "selector": ".smart-button-container a[href]",
+    "keepHosts": ["(^|\\.)go\\.kr$", "(^|\\.)korea\\.kr$", "(^|\\.)nhis\\.or\\.kr$", "(^|\\.)nps\\.or\\.kr$", "(^|\\.)hometax\\.go\\.kr$"],
+    "fallback": [
+      {"name": "숨은 환급금 1분 조회 — 숨은돈 알리미", "url": "https://refund.ledgolf.kr/"},
+      {"name": "안 찾아간 내 돈, 얼마나 잠들어 있을까", "url": "https://refund.ledgolf.kr/hidden-money/"},
+      {"name": "잠자는 돈 찾기 10가지 — 조회 방법과 기한", "url": "https://refund.ledgolf.kr/guide/"}
+    ]
+  },
+  "blogHosts": ["love.ledgolf.kr", "home.8949ok.kr", "neo.8949ok.kr", "on.o2u.kr", "view.o2u.kr", "www.oldee.kr", "oldee.kr", "up.oldee.kr", "mm.ryunadb.kr", "top.ryunadb.kr", "blog.seosann.kr", "keep.seosann.kr", "pay.sickgirl.co.kr", "look.ssp2021.kr", "name.ssp2021.kr", "go.winevisionshop.kr", "people.winevisionshop.kr", "dal.ydpn.kr", "8949ok.kr", "itembook.co.kr", "ledgolf.kr", "o2u.kr", "on595.co.kr", "oreurak.kr", "call.oreurak.kr", "ryunadb.kr", "seosann.kr", "sickgirl.co.kr", "ssp2021.kr", "ttjc.co.kr", "wedclub.kr", "gibugi.kr", "winevisionshop.kr", "ydpn.kr", "wp-follow-me.kr"],
+  "excludeHosts": [],
+  "excludePaths": ["privacy", "terms", "contact", "개인정보", "이용약관"],
+  "overrides": {},
+  "stop": ["방법", "절차", "조건", "신청", "조회", "확인", "기준", "안내", "정리", "비교", "목록", "정보", "가능", "대상", "종류", "이유", "원인", "해결", "사용", "이용", "계산", "계산법", "지급", "시기", "무료", "완벽", "총정리", "실무", "활용", "개념", "자격", "지원", "방법과", "완전", "차이", "분석", "전략", "비용", "예약", "반영", "시세", "평가", "의미", "변화", "문제", "오류", "준비", "일정", "과목", "효과", "특징", "후기", "추천", "가격", "할인", "환불", "여행", "직장인", "청년", "노인", "어르신", "주부", "대학생", "학생", "부모", "아이", "가족", "서울", "전국", "지역", "기간", "금액", "최신", "올해", "2024", "2025", "2026", "2027", "2024년", "2025년", "2026년", "2027년"],
+  "minScore": 8,
+  "minTop": 6
+}
