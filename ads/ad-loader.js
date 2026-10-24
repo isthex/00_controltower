@@ -151,12 +151,12 @@
       var slotType = (el.getAttribute('data-ad-type') || '').trim();
       if (slotType === 'kakao-channel') {
         ad = {
-          id: 'fallback-kakao-parking-alert',
+          id: 'fallback-kakao-saved-money',
           type: 'kakao-channel',
-          title: '주정차단속알리미 바로가기',
-          subtitle: '주정차단속 10분 전 문자 알림 · 완전 무료',
+          title: '잠자는 내돈 확인',
+          subtitle: '숨은돈 알리미에서 확인해요',
           cta: '채널 바로가기',
-          url: 'https://pf.kakao.com/_CEtCX/friend',
+          url: 'https://pf.kakao.com/_tJpjX/friend',
           image: 'images/kakao-channel-bg-wide.png'
         };
       } else {
@@ -201,7 +201,7 @@
     var html = '';
     if (hasImg) {
       html += '<img class="ad-bg" src="' + esc(imgUrl) + '" alt="" loading="lazy"'
-        + ' onerror="this.remove(); this.parentElement.classList.remove(\'has-image\');">';
+        + ' onerror="var p=this.parentElement; this.remove(); if(p) p.classList.remove(\'has-image\');">';
     }
     html += '<div class="ad-inner">'
       + '<span class="ad-label">' + esc(labelFor(ad)) + '</span>'

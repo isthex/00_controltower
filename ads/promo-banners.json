@@ -17,7 +17,7 @@
         "알림"
       ],
       "weight": 1,
-      "active": true
+      "active": false
     },
     {
       "id": "kakao-my-pension",
